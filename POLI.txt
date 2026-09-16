@@ -1,0 +1,596 @@
+# ╔══════════════════════════════════════════════════════════════╗
+# ║   PROMPT MAESTRO v2 — SITIO WEB DE LUJO                        ║
+# ║   ÁNGEL · JOYAS & ESMERALDAS                                   ║
+# ╚══════════════════════════════════════════════════════════════╝
+
+```
+                         ✧ ÁNGEL ✧
+                  JOYAS & ESMERALDAS
+              ─────────────────────────
+                 "Lujo con alma, brillo
+                    con propósito"
+```
+
+---
+
+## ÍNDICE
+
+```
+0.  Cómo usar este documento
+1.  Contexto y rol
+2.  Identidad de marca
+    2.1 Paleta de colores
+    2.2 Sistema tipográfico
+    2.3 Sistema de espaciado y grid
+    2.4 Logotipo y elementos gráficos
+    2.5 Componentes UI (botones, tarjetas, inputs)
+3.  Mapa del sitio (sitemap)
+4.  Referencia de estructura (Home)
+5.  Especificación detallada por sección
+6.  Páginas internas
+7.  Requisitos técnicos
+8.  E-commerce y flujo de compra
+9.  SEO y performance
+10. Accesibilidad
+11. Tono y guía de copy
+12. Prompts modulares (para pegar sección por sección)
+13. Entregables esperados
+14. Criterios de aceptación / QA
+15. Instrucción final para la IA generadora
+```
+
+---
+
+## 0. CÓMO USAR ESTE DOCUMENTO
+
+Este archivo es un **prompt maestro** listo para copiar y pegar en cualquier
+herramienta de generación de código/diseño con IA (v0, Claude, Cursor,
+Lovable, Bolt, Framer AI, etc.) para construir el sitio web completo de
+**Ángel Joyas & Esmeraldas**, tomando como referencia visual y estructural
+la maquetación de "Aurelia Jewelry" y la identidad de marca del logo
+dorado sobre fondo verde esmeralda.
+
+**Dos formas de usarlo:**
+
+- **Modo completo:** copia desde `## 1. CONTEXTO Y ROL` hasta
+  `## 15. INSTRUCCIÓN FINAL` y pégalo como una sola instrucción. Mejor
+  para herramientas con ventanas de contexto grandes (Claude, Cursor).
+- **Modo modular:** si la herramienta genera mejor por partes (v0,
+  Lovable), usa los bloques listos de la sección `## 12. PROMPTS
+  MODULARES`, uno por sección del sitio, en orden.
+
+---
+
+## 1. CONTEXTO Y ROL
+
+```
+Actúa como diseñador UI/UX senior y desarrollador Front-End experto en
+e-commerce de lujo (nivel Cartier, Tiffany & Co., Aurelia Jewelry). Vas a
+diseñar y programar el sitio web oficial de la marca:
+
+  Nombre:       Ángel Joyas & Esmeraldas
+  Rubro:        Joyería de lujo — especialidad en esmeraldas colombianas
+                 y piezas en oro
+  Tono:         Elegante, exclusivo, cálido, espiritual/sofisticado
+  Slogan guía:  "Lujo con alma, brillo con propósito"
+  Mercado:      Colombia (Medellín como base), con visión de expansión
+                 a clientela internacional de habla hispana
+  Audiencia:    Mujeres y hombres 28-55 años, poder adquisitivo alto,
+                 valoran autenticidad, artesanía y storytelling de marca
+
+El sitio debe transmitir sofisticación, exclusividad y confianza, con el
+mismo nivel de pulido visual que las tiendas online de joyería de alta
+gama contemporánea (referencia directa: estructura y jerarquía visual de
+"Aurelia Jewelry"), pero con una identidad cromática y narrativa propia:
+verde esmeralda profundo + dorado champán, inspirada en la esmeralda
+colombiana como protagonista.
+```
+
+---
+
+## 2. IDENTIDAD DE MARCA
+
+### 2.1 Paleta de colores
+
+```
+┌────────────────────────────────────────────────────────────────┐
+│  TOKEN               HEX         USO                            │
+├────────────────────────────────────────────────────────────────┤
+│  --color-emerald-900 #0B3D2E     Fondo principal / hero         │
+│  --color-emerald-700 #14523E     Secciones alternas             │
+│  --color-emerald-950 #08281D     Sombras / degradado profundo   │
+│  --color-gold-500    #C9A66B     Acentos, botones, líneas        │
+│  --color-gold-300    #E8C989     Hover, detalles, íconos         │
+│  --color-cream-100   #F5EFE4     Fondos claros / producto        │
+│  --color-ink-900     #12100E     Tipografía / footer             │
+│  --color-white       #FFFFFF     Texto sobre fondo oscuro        │
+└────────────────────────────────────────────────────────────────┘
+
+Gradiente de marca (hero / fondos oscuros):
+   radial-gradient(circle at top right,
+        #1A5C43 0%, #0B3D2E 45%, #08281D 100%)
+
+Reglas de contraste:
+  · Texto dorado (#C9A66B) sobre verde oscuro (#0B3D2E) → AA para texto
+    grande (≥18px o 14px bold). Para texto de cuerpo pequeño, usar
+    #E8C989 o blanco para cumplir AA en texto normal.
+  · Nunca combinar dorado sobre crema sin aumentar peso/tamaño: el
+    contraste es bajo. Usar --color-ink-900 para cuerpo de texto sobre
+    fondo crema.
+```
+
+### 2.2 Sistema tipográfico
+
+```
+Encabezados (H1-H3):   "Cormorant Garamond" o "Playfair Display"
+                        letter-spacing: 0.08em–0.15em según tamaño
+                        H1 hero en mayúsculas, ej. "Á N G E L"
+
+Subtítulos / cuerpo:    "Montserrat Light" o "Jost"
+                        letter-spacing: +0.02em, minúsculas
+
+Botones / navegación:   "Montserrat" 500, mayúsculas, tracking +0.1em
+
+Escala tipográfica (base 16px, ratio 1.25):
+  H1: 56px / 64px (desktop) — 36px / 42px (mobile)
+  H2: 40px / 48px           — 28px / 34px
+  H3: 28px / 36px           — 22px / 28px
+  Body: 16px / 26px
+  Small: 13px / 20px
+```
+
+### 2.3 Sistema de espaciado y grid
+
+```
+Escala de espaciado (múltiplos de 4px): 4·8·12·16·24·32·48·64·96·128
+
+Grid desktop:   12 columnas, margen lateral 80px, gutter 24px
+Grid tablet:    8 columnas,  margen lateral 40px, gutter 20px
+Grid mobile:    4 columnas,  margen lateral 20px, gutter 16px
+
+Breakpoints:    375px · 768px · 1024px · 1440px
+Contenedor máx: 1440px, centrado
+```
+
+### 2.4 Logotipo y elementos gráficos
+
+```
+- Monograma "A" estilizado en trazo dorado degradado, usado como
+  favicon, watermark y loader (animación de trazo dibujándose, 1.2s).
+- Ícono de alas + corazón pequeño como sello de marca (footer,
+  certificados de autenticidad, empaques, confirmaciones de compra).
+- Líneas finas doradas como separadores de sección (1px, opacidad 60%).
+- Texturas: fondo con textura de piedra pulida / mármol sutil, muy baja
+  opacidad (≤8%), solo en secciones "Nuestra Historia" y footer.
+- El logo NUNCA se deforma, rota ni se coloca sobre fondos de bajo
+  contraste (evitar sobre crema claro sin contenedor oscuro).
+```
+
+### 2.5 Componentes UI
+
+```
+BOTÓN PRIMARIO
+  Reposo:  fondo #C9A66B, texto #12100E, radio 2px, padding 14px 32px
+  Hover:   fondo #E8C989, leve elevación (shadow dorado suave)
+  Focus:   outline 2px #E8C989 offset 2px (accesibilidad teclado)
+
+BOTÓN SECUNDARIO (outline)
+  Reposo:  borde 1px #C9A66B, texto #C9A66B, fondo transparente
+  Hover:   fondo #C9A66B 10% opacidad
+
+TARJETA DE PRODUCTO
+  Radio 4px, sombra sutil en hover, zoom de imagen 1.05 (400ms ease-out)
+  Precio siempre visible, sin ocultar tras hover
+
+INPUT / FORMULARIO
+  Línea inferior dorada, sin bordes completos, label flotante,
+  estado de error en tono coral discreto (no rojo puro, para mantener
+  la paleta de lujo)
+```
+
+---
+
+## 3. MAPA DEL SITIO (SITEMAP)
+
+```
+/                          Home
+/coleccion                 Catálogo con filtros
+/coleccion/[categoria]     Anillos · Aretes · Collares · Pulseras
+/producto/[slug]           Ficha de producto individual
+/nuestra-historia           Storytelling de marca
+/esmeraldas                 Origen, certificación, proceso de selección
+/club-angel                 Programa VIP / newsletter
+/contacto                   Formulario + WhatsApp + mapa showroom
+/certificado/[id]           Certificado de autenticidad descargable
+/carrito                    Vista de carrito (o drawer, ver 4.1)
+/checkout                   Proceso de pago
+/legal/terminos             Términos y condiciones
+/legal/privacidad           Política de privacidad
+/legal/devoluciones         Política de devoluciones
+```
+
+---
+
+## 4. REFERENCIA DE ESTRUCTURA (HOME)
+
+Guía de layout y jerarquía inspirada en Aurelia Jewelry, adaptada a la
+paleta verde/dorado y al storytelling de esmeraldas colombianas:
+
+```
+┌───────────────────────────────────────────────────────────┐
+│ 1.  NAVBAR fijo, transparente → sólido al hacer scroll       │
+│ 2.  HERO full-width, foto/video + CTA doble                  │
+│ 3.  BARRA DE VALORES (4 íconos)                               │
+│ 4.  COLECCIÓN DESTACADA (grid de 5 productos con precio)     │
+│ 5.  BLOQUE "NUESTRA HISTORIA" (imagen + texto narrativo)      │
+│ 6.  BARRA DE CIFRAS / LOGROS                                  │
+│ 7.  FRANJA DE GARANTÍAS                                       │
+│ 8.  TESTIMONIOS / PRENSA                                      │
+│ 9.  NEWSLETTER / CLUB ÁNGEL                                   │
+│ 10. FOOTER completo                                            │
+└───────────────────────────────────────────────────────────┘
+```
+
+---
+
+## 5. ESPECIFICACIÓN DETALLADA POR SECCIÓN
+
+### 5.1 Navbar
+
+```
+[ LOGO ÁNGEL ]   INICIO   COLECCIÓN   ESMERALDAS   NOSOTROS   CONTACTO   [🔍] [👤] [🛍 2]
+```
+- Fondo transparente sobre el hero → `#0B3D2E` sólido con
+  `backdrop-filter: blur(10px)` al hacer scroll (>80px).
+- Logo centrado o a la izquierda en versión horizontal del monograma.
+- Carrito lateral tipo drawer con resumen de compra, subtotal y CTA
+  "Ir a pagar".
+- Menú mobile: overlay a pantalla completa, fondo verde oscuro,
+  ítems centrados, animación fade + slide (300ms).
+
+### 5.2 Hero Section
+
+```
+Fondo: video o imagen de mano/cuello luciendo joyas con esmeraldas,
+       overlay degradado verde esmeralda al 40%.
+
+Texto (izquierda o centrado, estilo Aurelia):
+   "AUDACES.
+    ATEMPORALES.
+    ANGELICALES."
+
+Subtexto: "Joyas en oro y esmeraldas colombianas certificadas,
+           creadas para brillar con propósito."
+
+Botones: [ EXPLORAR COLECCIÓN ]  (dorado sólido)
+         [ NUESTRA HISTORIA ]    (outline dorado)
+
+Detalle: indicador de scroll sutil (línea vertical animada) en la
+         esquina inferior.
+```
+
+### 5.3 Barra de valores (4 columnas)
+
+```
+💎 Esmeraldas        🤲 Artesanía         🛡 Calidad            🎁 Empaque
+   Certificadas          Hecha a mano         Garantizada           de Lujo
+   100% colombianas      por orfebres         Certificado de        Caja + estuche
+                          expertos             autenticidad          firmado
+```
+
+### 5.4 Colección destacada (grid de producto)
+
+```
+Tarjeta de producto:
+┌───────────────────┐
+│    [Foto joya]      │
+│                      │
+│  Anillo Ángel        │
+│  Oro 18K              │
+│  $XXX.XXX COP    [+]  │
+└───────────────────┘
+
+Grid responsive: 5 columnas desktop → 2 columnas tablet → 1 móvil
+Hover: zoom suave (scale 1.05) + sombra dorada + botón [+] agrega
+       rápido al carrito sin salir de la grilla.
+```
+
+### 5.5 Nuestra Historia
+
+```
+Layout dos columnas (imagen | texto), fondo crema (#F5EFE4):
+
+Imagen: joyas sobre piedra natural / esmeralda en bruto
+
+Texto:
+  "NUESTRA HISTORIA"
+  Ángel Joyas & Esmeraldas nace de la creencia de que el verdadero
+  lujo está en el detalle, la emoción y la autenticidad. Cada pieza
+  es diseñada y elaborada a mano para celebrar tu individualidad,
+  tu fortaleza y una belleza que trasciende el tiempo.
+
+  [ CONOCER MÁS ]
+```
+
+### 5.6 Cifras de marca
+
+```
+┌───────────┬────────────┬─────────────┬─────────────┐
+│    10+     │   250K+     │     98%      │    100%       │
+│  Años de   │  Clientes   │ Satisfacción │  Esmeraldas    │
+│ Orfebrería │  Felices    │              │  Certificadas  │
+└───────────┴────────────┴─────────────┴─────────────┘
+Fondo negro (#12100E), números en dorado grande serif.
+Animación: conteo ascendente al entrar en viewport (una sola vez).
+```
+
+### 5.7 Garantías
+
+```
+🏅 Calidad Premium    🚚 Envío Seguro     🎧 Asesoría Experta     ↩ Devoluciones
+   Oro y esmeraldas       Asegurado a         Acompañamiento          Fáciles dentro
+   genuinas                todo el país        personalizado           de 30 días
+```
+
+### 5.8 Testimonios / Prensa
+
+```
+Carrusel horizontal (3 testimonios visibles en desktop, 1 en mobile):
+  - Foto/iniciales del cliente, nombre, ciudad
+  - Cita corta (máx. 2 líneas)
+  - Calificación en íconos dorados (no estrellas amarillas genéricas)
+
+Logos de prensa/medios en escala de grises, opacidad 60%, hover a 100%.
+```
+
+### 5.9 Newsletter / Club Ángel
+
+```
+Fondo verde oscuro con textura sutil.
+"ÚNETE AL CLUB ÁNGEL"
+Beneficios: acceso anticipado a colecciones, asesoría VIP, regalo de
+bienvenida.
+Input de email + botón "UNIRME" (dorado sólido).
+Checkbox de consentimiento de datos (obligatorio, según Ley 1581 de
+Colombia — Habeas Data).
+```
+
+### 5.10 Footer
+
+```
+─────────────────────────────────────────────────────
+ ÁNGEL JOYAS & ESMERALDAS
+ "Lujo con alma, brillo con propósito"
+
+ COLECCIÓN     NOSOTROS      AYUDA           SÍGUENOS
+ Anillos       Historia      Contacto        Instagram
+ Aretes        Valores       Envíos          WhatsApp
+ Collares      Certificado   Devoluciones    Facebook
+ Pulseras      de Autenticidad
+
+ © 2026 Ángel Joyas & Esmeraldas — Todos los derechos reservados
+ Términos · Privacidad · Devoluciones
+─────────────────────────────────────────────────────
+```
+
+---
+
+## 6. PÁGINAS INTERNAS
+
+```
+CATÁLOGO (/coleccion)
+  - Filtros: tipo de joya, material, rango de precio, disponibilidad de
+    esmeralda, tamaño.
+  - Orden: relevancia, precio (asc/desc), novedades.
+  - Grid 4 columnas desktop → 2 tablet → 1 mobile.
+  - Estado vacío ("sin resultados") con sugerencia de limpiar filtros.
+
+FICHA DE PRODUCTO (/producto/[slug])
+  - Galería con zoom (hover desktop, pinch mobile), miniaturas laterales.
+  - Selector de talla/material con disponibilidad en tiempo real.
+  - Certificado de autenticidad descargable en PDF.
+  - Botón "Consultar por WhatsApp" con mensaje precargado.
+  - Sección "También te puede interesar" (3-4 productos relacionados).
+  - Breadcrumb: Inicio / Colección / Categoría / Producto.
+
+NUESTRA HISTORIA (/nuestra-historia)
+  - Línea de tiempo de la marca (hitos, año de fundación, expansión).
+  - Fotografía de taller/orfebres (storytelling humano).
+
+ESMERALDAS (/esmeraldas)
+  - Explicación del proceso de selección y certificación.
+  - Mapa o referencia de origen (minas de Boyacá/Muzo, sin afirmar
+    datos no verificados por el cliente).
+
+CONTACTO (/contacto)
+  - Formulario (nombre, email, teléfono, mensaje).
+  - Mapa embebido del showroom (si aplica).
+  - Enlace directo a WhatsApp Business.
+```
+
+---
+
+## 7. REQUISITOS TÉCNICOS
+
+```
+FRONT-END
+  • Stack sugerido: Next.js + React + Tailwind CSS (SSR/SSG para SEO)
+  • Mobile-first, totalmente responsive: 375 / 768 / 1024 / 1440
+  • Animaciones sutiles con Framer Motion (fade-in on scroll, hover 3D
+    suave en tarjetas de producto, respetando `prefers-reduced-motion`)
+  • Imágenes: formato WebP/AVIF, lazy loading, `srcset` para densidad
+  • Componentización: Navbar, Footer, ProductCard, Button, Drawer,
+    Hero, ValueBar, StatsBar, Testimonial, Newsletter — todos
+    reutilizables y documentados con props claros
+
+E-COMMERCE
+  • Ver sección 8
+
+SEO / PERFORMANCE
+  • Ver sección 9
+
+ACCESIBILIDAD
+  • Ver sección 10
+```
+
+---
+
+## 8. E-COMMERCE Y FLUJO DE COMPRA
+
+```
+CATÁLOGO → FICHA DE PRODUCTO → CARRITO (drawer) → CHECKOUT → CONFIRMACIÓN
+
+Carrito lateral (drawer):
+  - Lista de productos con imagen, nombre, variante, cantidad, precio
+  - Edición de cantidad in-line, eliminar producto
+  - Subtotal + nota de envío ("Envío calculado en el checkout")
+  - CTA "IR A PAGAR"
+
+Checkout simplificado (idealmente 1 sola página con acordeón):
+  1. Datos de envío
+  2. Método de envío
+  3. Método de pago — integración pasarela Colombia:
+     Wompi / PayU / Mercado Pago
+  4. Resumen y confirmación
+
+Confirmación de compra:
+  - Número de orden, resumen, certificado de autenticidad adjunto
+  - Email de confirmación con identidad de marca (plantilla dorada/verde)
+
+Club Ángel (newsletter con beneficios VIP):
+  - Doble opt-in por email
+  - Segmentación básica (cliente nuevo vs. recurrente)
+```
+
+---
+
+## 9. SEO Y PERFORMANCE
+
+```
+• Meta tags optimizados: "joyas de esmeraldas Colombia", "esmeraldas
+  certificadas", "joyería de lujo Medellín/Colombia", "anillos de oro
+  con esmeralda colombiana"
+• Schema.org: Product, Organization, BreadcrumbList, Review
+• Sitemap.xml y robots.txt configurados
+• Open Graph + Twitter Cards para cada producto (imagen, precio, título)
+• Core Web Vitals objetivo:
+    LCP < 2.5s · CLS < 0.1 · INP < 200ms
+• Optimización de fuentes: `font-display: swap`, precarga de fuentes
+  críticas (Cormorant Garamond / Montserrat)
+```
+
+---
+
+## 10. ACCESIBILIDAD
+
+```
+• Contraste mínimo AA en todo texto (ver reglas en 2.1)
+• Navegación completa por teclado (focus visible en dorado, sin outline
+  eliminado)
+• Alt text descriptivo en todas las imágenes de producto (material,
+  tipo de joya, no solo "imagen1.jpg")
+• Roles ARIA en drawer de carrito, modal de zoom y menú mobile
+• Formularios con labels asociados (no solo placeholder)
+• Respeto a `prefers-reduced-motion` para desactivar animaciones no
+  esenciales
+```
+
+---
+
+## 11. TONO Y GUÍA DE COPY
+
+```
+- Voz en primera persona de marca, cálida pero aspiracional.
+- Evitar tecnicismos; usar palabras como "brillo", "alma", "legado",
+  "esmeralda colombiana", "hecho a mano", "propósito".
+- CTA siempre en mayúsculas cortas: "DESCUBRIR", "EXPLORAR",
+  "AGENDAR ASESORÍA", "UNIRME".
+- Frases cortas en encabezados (3-5 palabras), párrafos de cuerpo
+  breves (máx. 3 líneas por bloque).
+- Nunca usar superlativos vacíos ("el mejor", "único en el mundo") sin
+  respaldo — preferir storytelling concreto (origen, proceso, materiales).
+```
+
+---
+
+## 12. PROMPTS MODULARES (para pegar sección por sección)
+
+```
+Si tu herramienta de IA genera mejor por bloques, usa uno a la vez,
+manteniendo siempre como contexto la sección 2 (Identidad de marca):
+
+[BLOQUE 1] "Genera el Navbar y Hero de Ángel Joyas & Esmeraldas según
+la especificación 5.1 y 5.2, usando la paleta y tipografía de la
+sección 2. Componente reutilizable, responsive, en React + Tailwind."
+
+[BLOQUE 2] "Genera la barra de valores y el grid de colección
+destacada (5.3 y 5.4), con datos de ejemplo para 5 productos."
+
+[BLOQUE 3] "Genera el bloque 'Nuestra Historia' y la barra de cifras
+(5.5 y 5.6), con animación de conteo ascendente."
+
+[BLOQUE 4] "Genera garantías, testimonios y newsletter (5.7, 5.8, 5.9)."
+
+[BLOQUE 5] "Genera el footer completo (5.10) y su versión mobile."
+
+[BLOQUE 6] "Genera la página de catálogo con filtros (sección 6,
+Catálogo) y la ficha de producto individual."
+```
+
+---
+
+## 13. ENTREGABLES ESPERADOS
+
+```
+[ ] Wireframe/mockup de Home (desktop + mobile)
+[ ] Sistema de diseño (colores, tipografía, componentes) en Figma o código
+[ ] Home page funcional
+[ ] Página de colección/catálogo con filtros
+[ ] Página de producto individual
+[ ] Página "Nuestra Historia" y "Esmeraldas"
+[ ] Página de contacto / asesoría
+[ ] Flujo de carrito + checkout
+[ ] Footer y navbar reutilizables
+[ ] Páginas legales (términos, privacidad, devoluciones)
+```
+
+---
+
+## 14. CRITERIOS DE ACEPTACIÓN / QA
+
+```
+[ ] Ningún texto dorado sobre crema sin verificar contraste AA
+[ ] Todas las imágenes tienen alt text descriptivo
+[ ] El sitio es usable 100% por teclado (tab, enter, esc en modales)
+[ ] LCP < 2.5s en Home (medido en Lighthouse, mobile)
+[ ] Checkout funcional en al menos una pasarela de pago colombiana
+[ ] Sitio probado en los 4 breakpoints (375/768/1024/1440)
+[ ] `prefers-reduced-motion` respetado en todas las animaciones
+[ ] Meta tags y schema.org presentes en Home y fichas de producto
+```
+
+---
+
+## 15. INSTRUCCIÓN FINAL PARA LA IA GENERADORA
+
+```
+Genera el código completo del sitio web "Ángel Joyas & Esmeraldas"
+siguiendo EXACTAMENTE la paleta, tipografía, espaciado y estructura
+descritos arriba, inspirándote en la jerarquía visual de referencia
+"Aurelia Jewelry" pero con la identidad verde esmeralda + dorado del
+logo Ángel. Prioriza una experiencia de lujo, minimalista y elegante,
+con espacios en blanco generosos, imágenes de alto impacto y
+microinteracciones sutiles. Cumple los criterios de accesibilidad y
+performance de las secciones 9-10. Entrega el código listo para
+producción, componentizado, comentado y con datos de ejemplo
+realistas (placeholders de producto en pesos colombianos, COP).
+```
+
+---
+
+```
+              ✧ ─────────────────────────── ✧
+                FIN DEL PROMPT MAESTRO v2
+                 ÁNGEL JOYAS & ESMERALDAS
+              ✧ ─────────────────────────── ✧
+```
