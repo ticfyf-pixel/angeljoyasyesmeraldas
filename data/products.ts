@@ -54,7 +54,7 @@ export const PRODUCTS: Product[] = [
     certificateId: "ANG-EM-001",
     related: ["anillo-legado", "collar-eterno", "aretes-ala"],
     images: [
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80",
+      "/images/productos/anillo-esmeralda-halo-2.jpg",
       "https://images.unsplash.com/photo-1603561596112-0a132be14233?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
     ],
@@ -77,7 +77,7 @@ export const PRODUCTS: Product[] = [
     certificateId: "ANG-EM-002",
     related: ["anillo-angel", "anillo-eterno", "pulsera-origen"],
     images: [
-      "https://images.unsplash.com/photo-1603561596112-0a132be14233?auto=format&fit=crop&w=1400&q=80",
+      "/images/productos/anillo-esmeralda-halo-1.jpg",
       "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80",
     ],
@@ -144,9 +144,9 @@ export const PRODUCTS: Product[] = [
     certificateId: "ANG-EM-005",
     related: ["aretes-muse", "collar-eterno", "anillo-angel"],
     images: [
-      "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1617038260897-41a1f14a8ca0?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80",
+      "/images/productos/aretes-esmeralda-seda.jpg",
+      "/images/productos/aretes-esmeralda-caja.jpg",
+      "/images/productos/aretes-esmeralda-puesto.jpg",
     ],
     description:
       "Gotas de esmeralda suspendidas en un trazo de oro que recuerda las alas del sello Ángel.",
@@ -211,7 +211,7 @@ export const PRODUCTS: Product[] = [
     certificateId: "ANG-EM-008",
     related: ["collar-muzo", "anillo-angel", "aretes-ala"],
     images: [
-      "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80",
+      "/images/productos/colgante-esmeralda-pera.jpg",
       "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
     ],
@@ -384,7 +384,7 @@ export const PRODUCTS: Product[] = [
     certificateId: "ANG-EM-016",
     related: ["anillo-angel", "aretes-muse", "collar-muzo"],
     images: [
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80",
+      "/images/productos/anillo-esmeralda-banda.jpg",
       "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1603561596112-0a132be14233?auto=format&fit=crop&w=1400&q=80",
     ],
@@ -392,6 +392,27 @@ export const PRODUCTS: Product[] = [
       "Esmeralda con jardín visible, celebrado y no oculto. Un anillo para quien entiende que la autenticidad tiene textura.",
     story:
       "En Ángel no escondemos el origen de la piedra. El jardín es memoria de la tierra colombiana.",
+  },
+  {
+    id: "AJ-017",
+    slug: "colgante-hamsa",
+    name: "Colgante Hamsa",
+    category: "collares",
+    material: "Oro 18K",
+    emerald: true,
+    carats: "0.15 ct",
+    price: 3450000,
+    new: true,
+    sizes: ["Única"],
+    certificateId: "ANG-EM-017",
+    related: ["collar-eterno", "collar-muzo", "pulsera-origen"],
+    images: [
+      "/images/productos/colgante-estrella-david-hamsa.jpg",
+    ],
+    description:
+      "Estrella de David en oro 18K que enmarca una mano de Hamsa con una esmeralda colombiana en el centro. Un talismán de protección y buena fortuna, hecho pieza.",
+    story:
+      "Dos símbolos milenarios se cruzan en un solo trazo de oro: la estrella que multiplica la luz y la mano que la guarda. En el centro, la esmeralda que le da alma verde a la promesa.",
   },
 ];
 

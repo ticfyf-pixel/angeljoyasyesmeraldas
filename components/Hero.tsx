@@ -6,8 +6,8 @@ export function Hero() {
       <div className="absolute inset-0">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=2200&q=80"
-          alt="Joyas de oro y esmeraldas sobre terciopelo, colección Ángel"
+          src="/images/hero/lifestyle-manos-entrelazadas.jpg"
+          alt="Anillo de esmeralda colombiana en oro 18K, colección Ángel"
           className="h-full w-full object-cover"
         />
         <div className="absolute inset-0 bg-gradient-to-r from-angel-950/92 via-angel-900/72 to-angel-900/40" />
