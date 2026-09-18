@@ -10,7 +10,7 @@ export function Hero() {
           alt="Anillo de esmeralda colombiana en oro 18K, colección Ángel"
           className="h-full w-full object-cover"
         />
-        <div className="absolute inset-0 bg-gradient-to-r from-angel-950/92 via-angel-900/72 to-angel-900/40" />
+        <div className="absolute inset-0 bg-gradient-to-r from-angel-950/95 via-angel-900/75 to-angel-900/40" />
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-site px-5 pb-24 pt-36 md:px-10 lg:px-20">

@@ -46,7 +46,7 @@ export function Navbar() {
         className={`fixed inset-x-0 top-0 z-50 transition duration-500 ${
           transparent
             ? "bg-transparent"
-            : "bg-angel-900/92 shadow-[0_10px_30px_rgba(8,40,29,0.35)] backdrop-blur-[10px]"
+            : "bg-angel-900/90 shadow-[0_10px_30px_rgba(8,40,29,0.35)] backdrop-blur-[10px]"
         }`}
       >
         <nav className="mx-auto flex max-w-site items-center justify-between px-5 py-3 md:px-10 lg:px-20">

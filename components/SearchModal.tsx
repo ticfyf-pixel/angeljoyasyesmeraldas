@@ -56,7 +56,7 @@ export function SearchModal() {
           value={q}
           onChange={(e) => setQ(e.target.value)}
           placeholder="Anillo, esmeralda, oro 18K…"
-          className="mt-2 w-full border-0 border-b border-gold-500 bg-transparent pb-3 text-lg outline-none placeholder:text-ink/35"
+          className="mt-2 w-full border-0 border-b border-gold-500 bg-transparent pb-3 text-lg outline-none placeholder:text-ink/40"
         />
         <ul className="mt-5 space-y-3">
           {results.map((p) => (
@@ -70,7 +70,7 @@ export function SearchModal() {
                 <img src={p.images[0]} alt="" className="h-14 w-12 object-cover" />
                 <span className="flex-1">
                   <span className="block font-serif text-lg">{p.name}</span>
-                  <span className="text-xs text-ink/55">{p.material}</span>
+                  <span className="text-xs text-ink/60">{p.material}</span>
                 </span>
                 <span className="text-sm">{formatCOP(p.price)}</span>
               </Link>

@@ -73,7 +73,7 @@ export function CartDrawer() {
                     >
                       {item.name}
                     </Link>
-                    <p className="text-xs uppercase tracking-[0.1em] text-ink/55">
+                    <p className="text-xs uppercase tracking-[0.1em] text-ink/60">
                       {item.material} · Talla {item.size}
                     </p>
                     <p className="mt-1 text-sm">{formatCOP(item.price)}</p>
@@ -117,7 +117,7 @@ export function CartDrawer() {
             <span>Subtotal</span>
             <span>{formatCOP(subtotal)}</span>
           </div>
-          <p className="mb-5 text-xs text-ink/55">Envío calculado en el checkout</p>
+          <p className="mb-5 text-xs text-ink/60">Envío calculado en el checkout</p>
           <Button href="/checkout" className="w-full" onClick={closeCart}>
             Ir a pagar
           </Button>

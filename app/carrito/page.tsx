@@ -30,7 +30,7 @@ export default function CarritoPage() {
                     <Link href={`/producto/${item.slug}`} className="font-serif text-2xl">
                       {item.name}
                     </Link>
-                    <p className="text-xs uppercase tracking-nav text-ink/55">
+                    <p className="text-xs uppercase tracking-nav text-ink/60">
                       {item.material} · Talla {item.size}
                     </p>
                     <p className="mt-2">{formatCOP(item.price)}</p>
@@ -57,7 +57,7 @@ export default function CarritoPage() {
                 <span>Subtotal</span>
                 <span>{formatCOP(subtotal)}</span>
               </div>
-              <p className="mt-2 text-xs text-ink/55">Envío calculado en el checkout</p>
+              <p className="mt-2 text-xs text-ink/60">Envío calculado en el checkout</p>
               <Button href="/checkout" className="mt-6 w-full">
                 Ir a pagar
               </Button>

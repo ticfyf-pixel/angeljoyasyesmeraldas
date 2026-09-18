@@ -51,7 +51,7 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
             <h2 className="font-serif text-2xl">Filtros</h2>
 
             <fieldset className="mt-6">
-              <legend className="text-[10px] uppercase tracking-nav text-ink/55">Tipo de joya</legend>
+              <legend className="text-[10px] uppercase tracking-nav text-ink/60">Tipo de joya</legend>
               <div className="mt-3 flex flex-col gap-2 text-sm">
                 <label className="flex gap-2">
                   <input
@@ -77,7 +77,7 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
             </fieldset>
 
             <fieldset className="mt-6">
-              <legend className="text-[10px] uppercase tracking-nav text-ink/55">Material</legend>
+              <legend className="text-[10px] uppercase tracking-nav text-ink/60">Material</legend>
               <div className="mt-3 flex flex-col gap-2 text-sm">
                 <label className="flex gap-2">
                   <input type="radio" checked={material === "todos"} onChange={() => setMaterial("todos")} />
@@ -91,7 +91,7 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
             </fieldset>
 
             <fieldset className="mt-6">
-              <legend className="text-[10px] uppercase tracking-nav text-ink/55">Esmeralda</legend>
+              <legend className="text-[10px] uppercase tracking-nav text-ink/60">Esmeralda</legend>
               <div className="mt-3 flex flex-col gap-2 text-sm">
                 <label className="flex gap-2">
                   <input type="radio" checked={emerald === "todas"} onChange={() => setEmerald("todas")} />
@@ -108,7 +108,7 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
               </div>
             </fieldset>
 
-            <label className="mt-6 block text-[10px] uppercase tracking-nav text-ink/55">
+            <label className="mt-6 block text-[10px] uppercase tracking-nav text-ink/60">
               Precio máximo · ${maxPrice.toLocaleString("es-CO")}
               <input
                 type="range"
@@ -151,7 +151,7 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
             {items.length === 0 ? (
               <div className="rounded-[4px] border border-gold-500/30 p-12 text-center">
                 <p className="font-serif text-2xl">Sin resultados</p>
-                <p className="mt-3 text-sm text-ink/65">
+                <p className="mt-3 text-sm text-ink/70">
                   No hay piezas con esos filtros. Prueba ampliar el rango o limpiar la selección.
                 </p>
                 <div className="mt-6">

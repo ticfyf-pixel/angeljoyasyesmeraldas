@@ -57,7 +57,7 @@ export default async function CertificadoPage({
           <p className="mx-auto mt-10 max-w-md text-center font-serif text-lg italic text-ink/70">
             “{SITE.slogan}”
           </p>
-          <p className="mt-10 text-center text-[11px] uppercase tracking-nav text-ink/45">
+          <p className="mt-10 text-center text-[11px] uppercase tracking-nav text-ink/50">
             Documento emitido por el taller · 2026
           </p>
         </article>

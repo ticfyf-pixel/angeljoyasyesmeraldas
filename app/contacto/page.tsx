@@ -28,7 +28,7 @@ export default function ContactoPage() {
             <Field id="email" label="Correo" type="email" required />
             <Field id="telefono" label="Teléfono" type="tel" />
             <div>
-              <label htmlFor="mensaje" className="text-[10px] uppercase tracking-nav text-ink/55">
+              <label htmlFor="mensaje" className="text-[10px] uppercase tracking-nav text-ink/60">
                 Mensaje
               </label>
               <textarea
@@ -84,7 +84,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="text-[10px] uppercase tracking-nav text-ink/55">
+      <label htmlFor={id} className="text-[10px] uppercase tracking-nav text-ink/60">
         {label}
       </label>
       <input

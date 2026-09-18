@@ -65,7 +65,7 @@ export default function CheckoutPage() {
                   <input type="radio" name="ship" checked={ship === s.id} onChange={() => setShip(s.id)} />
                   <span className="flex-1">
                     <span className="block font-medium">{s.name}</span>
-                    <span className="text-xs text-ink/55">{s.days}</span>
+                    <span className="text-xs text-ink/60">{s.days}</span>
                   </span>
                   <span>{formatCOP(s.price)}</span>
                 </label>
@@ -167,7 +167,7 @@ function Field({
 }) {
   return (
     <div>
-      <label htmlFor={id} className="text-[10px] uppercase tracking-nav text-ink/55">
+      <label htmlFor={id} className="text-[10px] uppercase tracking-nav text-ink/60">
         {label}
       </label>
       <input

@@ -60,7 +60,7 @@ export function Footer() {
         </div>
       </div>
       <div className="gold-line" />
-      <div className="mx-auto flex max-w-site flex-col gap-3 px-5 py-6 text-[11px] uppercase tracking-[0.12em] text-cream/55 md:flex-row md:items-center md:justify-between md:px-10 lg:px-20">
+      <div className="mx-auto flex max-w-site flex-col gap-3 px-5 py-6 text-[11px] uppercase tracking-[0.12em] text-cream/60 md:flex-row md:items-center md:justify-between md:px-10 lg:px-20">
         <p>© 2026 Ángel Joyas & Esmeraldas — Todos los derechos reservados</p>
         <p className="flex gap-4">
           <Link href="/legal/terminos">Términos</Link>

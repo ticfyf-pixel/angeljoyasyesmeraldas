@@ -51,7 +51,7 @@ export function Newsletter() {
                 type="email"
                 required
                 placeholder="tu@correo.com"
-                className="flex-1 border-0 border-b border-gold-500 bg-transparent py-3 text-cream outline-none placeholder:text-cream/35"
+                className="flex-1 border-0 border-b border-gold-500 bg-transparent py-3 text-cream outline-none placeholder:text-cream/40"
               />
               <Button type="submit">Unirme</Button>
             </div>
