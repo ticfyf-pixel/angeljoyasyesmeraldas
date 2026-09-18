@@ -10,10 +10,11 @@ export function HistoryTeaser() {
             src="https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80"
             alt="Esmeraldas en bruto y talladas sobre piedra natural"
             className="aspect-[4/5] w-full rounded-[4px] object-cover"
+            loading="lazy"
           />
           <div className="absolute -bottom-6 -right-0 hidden w-40 border border-gold-500 bg-angel-900 p-4 md:block lg:-right-6">
             {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img src="/images/logo.jpg" alt="" className="h-full w-full object-cover" />
+            <img src="/images/logo.jpg" alt="" className="h-full w-full object-cover" loading="lazy" />
           </div>
         </div>
         <div className="lg:pl-8">

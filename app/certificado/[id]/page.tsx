@@ -37,7 +37,7 @@ export default async function CertificadoPage({
 
         <article className="border border-gold-500 bg-white p-8 md:p-14 print:border-gold-500">
           {/* eslint-disable-next-line @next/next/no-img-element */}
-          <img src="/images/logo.jpg" alt={SITE.name} className="mx-auto h-28 w-28 object-cover" />
+          <img src="/images/logo.jpg" alt={SITE.name} className="mx-auto h-28 w-28 object-cover" loading="lazy" />
           <p className="mt-6 text-center font-serif text-3xl tracking-[0.28em]">ÁNGEL</p>
           <p className="text-center text-[10px] uppercase tracking-[0.22em] text-gold-500">
             Joyas & Esmeraldas

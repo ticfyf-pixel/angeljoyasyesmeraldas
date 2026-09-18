@@ -13,6 +13,7 @@ export function Footer() {
             src="/images/logo.jpg"
             alt="Ángel Joyas & Esmeraldas"
             className="h-28 w-28 rounded-sm object-cover"
+            loading="lazy"
           />
           <p className="mt-5 font-serif text-2xl tracking-[0.2em]">ÁNGEL</p>
           <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-gold-500">

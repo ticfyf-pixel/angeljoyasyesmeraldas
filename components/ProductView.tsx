@@ -57,7 +57,7 @@ export function ProductView({ product }: { product: Product }) {
                   aria-label={`Ver imagen ${idx + 1} de ${product.name}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={src} alt="" className="h-20 w-20 object-cover" />
+                  <img src={src} alt="" className="h-20 w-20 object-cover" loading="lazy" />
                 </button>
               ))}
             </div>
@@ -162,6 +162,7 @@ export function ProductView({ product }: { product: Product }) {
             src={product.images[active]}
             alt={`${product.name} ampliada`}
             className="max-h-[90vh] max-w-full object-contain"
+            loading="lazy"
           />
         </div>
       )}

@@ -67,7 +67,7 @@ export function SearchModal() {
                 className="flex items-center gap-3 py-2"
               >
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={p.images[0]} alt="" className="h-14 w-12 object-cover" />
+                <img src={p.images[0]} alt="" className="h-14 w-12 object-cover" loading="lazy" />
                 <span className="flex-1">
                   <span className="block font-serif text-lg">{p.name}</span>
                   <span className="text-xs text-ink/60">{p.material}</span>

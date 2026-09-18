@@ -64,6 +64,7 @@ export function CartDrawer() {
                     src={item.image}
                     alt=""
                     className="h-24 w-20 rounded-[4px] object-cover"
+                    loading="lazy"
                   />
                   <div className="flex-1">
                     <Link

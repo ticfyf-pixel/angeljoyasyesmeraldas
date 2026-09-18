@@ -75,23 +75,27 @@ export function Navbar() {
             ))}
           </ul>
 
-          <div className="flex items-center gap-4 text-gold-300">
+          <div className="flex items-center gap-1 text-gold-300">
             <button
               type="button"
               aria-label="Buscar"
               onClick={openSearch}
-              className="transition hover:text-gold-500"
+              className="flex h-11 w-11 items-center justify-center transition hover:text-gold-500"
             >
               <SearchIcon />
             </button>
-            <Link href="/club-angel" aria-label="Club Ángel" className="hidden sm:block hover:text-gold-500">
+            <Link
+              href="/club-angel"
+              aria-label="Club Ángel"
+              className="hidden h-11 w-11 items-center justify-center hover:text-gold-500 sm:flex"
+            >
               <UserIcon />
             </Link>
             <button
               type="button"
               aria-label={`Abrir carrito, ${count} artículos`}
               onClick={openCart}
-              className="relative hover:text-gold-500"
+              className="relative flex h-11 w-11 items-center justify-center hover:text-gold-500"
             >
               <BagIcon />
               {count > 0 && (

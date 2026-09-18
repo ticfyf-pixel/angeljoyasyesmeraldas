@@ -25,7 +25,7 @@ export default function CarritoPage() {
               {items.map((item) => (
                 <li key={`${item.id}-${item.size}`} className="flex gap-4 border-b border-gold-500/25 pb-6">
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={item.image} alt="" className="h-28 w-24 object-cover" />
+                  <img src={item.image} alt="" className="h-28 w-24 object-cover" loading="lazy" />
                   <div className="flex-1">
                     <Link href={`/producto/${item.slug}`} className="font-serif text-2xl">
                       {item.name}
