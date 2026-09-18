@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { PRODUCTS } from "@/data/products";
+import { getActiveProducts } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { formatCOP } from "@/lib/format";
 
@@ -24,9 +24,10 @@ export function SearchModal() {
   }, [searchOpen]);
 
   const results = useMemo(() => {
+    const active = getActiveProducts();
     const term = q.trim().toLowerCase();
-    if (!term) return PRODUCTS.slice(0, 6);
-    return PRODUCTS.filter(
+    if (!term) return active.slice(0, 6);
+    return active.filter(
       (p) =>
         p.name.toLowerCase().includes(term) ||
         p.material.toLowerCase().includes(term) ||

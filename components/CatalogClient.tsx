@@ -1,7 +1,7 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { CATEGORIES, PRODUCTS, type Category } from "@/data/products";
+import { CATEGORIES, getActiveProducts, type Category } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/Button";
 
@@ -15,7 +15,7 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
   const [sort, setSort] = useState<Sort>("relevancia");
 
   const items = useMemo(() => {
-    let list = PRODUCTS.filter((p) => {
+    let list = getActiveProducts().filter((p) => {
       if (category !== "todas" && p.category !== category) return false;
       if (material === "oro" && !p.material.toLowerCase().includes("oro")) return false;
       if (emerald === "si" && !p.emerald) return false;

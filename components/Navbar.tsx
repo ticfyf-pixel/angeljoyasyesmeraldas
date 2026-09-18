@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import { Logo } from "./Logo";
@@ -14,8 +15,13 @@ const LINKS = [
   { href: "/contacto", label: "Contacto" },
 ];
 
+// Paginas cuya seccion superior es una imagen/fondo oscuro: solo ahi el header
+// puede empezar transparente sin perder contraste con el texto claro del menu.
+const DARK_HERO_ROUTES = ["/", "/esmeraldas", "/club-angel"];
+
 export function Navbar() {
   const { count, openCart, openSearch } = useCart();
+  const pathname = usePathname();
   const [scrolled, setScrolled] = useState(false);
   const [menu, setMenu] = useState(false);
 
@@ -25,6 +31,8 @@ export function Navbar() {
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  const transparent = !scrolled && DARK_HERO_ROUTES.includes(pathname ?? "");
 
   return (
     <>
@@ -36,9 +44,9 @@ export function Navbar() {
       </a>
       <header
         className={`fixed inset-x-0 top-0 z-50 transition duration-500 ${
-          scrolled
-            ? "bg-angel-900/92 shadow-[0_10px_30px_rgba(8,40,29,0.35)] backdrop-blur-[10px]"
-            : "bg-transparent"
+          transparent
+            ? "bg-transparent"
+            : "bg-angel-900/92 shadow-[0_10px_30px_rgba(8,40,29,0.35)] backdrop-blur-[10px]"
         }`}
       >
         <nav className="mx-auto flex max-w-site items-center justify-between px-5 py-3 md:px-10 lg:px-20">

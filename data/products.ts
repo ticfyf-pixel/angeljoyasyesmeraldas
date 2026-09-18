@@ -29,6 +29,8 @@ export type Product = {
   related: string[];
   featured?: boolean;
   new?: boolean;
+  /** false = sin foto real todavia; se oculta de Coleccion, destacados y relacionados */
+  active?: boolean;
 };
 
 export const CATEGORIES: { slug: Category; label: string }[] = [
@@ -53,11 +55,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["5", "6", "7", "8", "9"],
     certificateId: "ANG-EM-001",
     related: ["anillo-legado", "collar-eterno", "aretes-ala"],
-    images: [
-      "/images/productos/anillo-esmeralda-halo-2.jpg",
-      "https://images.unsplash.com/photo-1603561596112-0a132be14233?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
-    ],
+    images: ["/images/productos/anillo-esmeralda-halo-2.jpg"],
     description:
       "Una esmeralda colombiana de talla octogonal, abrazada por un halo de oro 18K. Pieza firma de la casa: serena, luminosa y hecha para durar generaciones.",
     story:
@@ -76,11 +74,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["5", "6", "7", "8", "9", "10"],
     certificateId: "ANG-EM-002",
     related: ["anillo-angel", "anillo-eterno", "pulsera-origen"],
-    images: [
-      "/images/productos/anillo-esmeralda-halo-1.jpg",
-      "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80",
-    ],
+    images: ["/images/productos/anillo-esmeralda-halo-1.jpg"],
     description:
       "Solitario de esmeralda con garras finas en oro amarillo. Un clásico de compromiso con el alma de la orfebrería medellinense.",
     story:
@@ -94,6 +88,7 @@ export const PRODUCTS: Product[] = [
     material: "Oro 18K",
     emerald: false,
     price: 3920000,
+    active: false,
     sizes: ["5", "6", "7", "8", "9"],
     certificateId: "ANG-OR-003",
     related: ["anillo-angel", "aretes-luz", "collar-angel"],
@@ -117,6 +112,7 @@ export const PRODUCTS: Product[] = [
     carats: "2.00 ct",
     price: 8750000,
     new: true,
+    active: false,
     sizes: ["6", "7", "8", "9"],
     certificateId: "ANG-EM-004",
     related: ["collar-muzo", "anillo-legado", "aretes-muse"],
@@ -161,6 +157,7 @@ export const PRODUCTS: Product[] = [
     material: "Oro 18K",
     emerald: false,
     price: 2180000,
+    active: false,
     sizes: ["Única"],
     certificateId: "ANG-OR-006",
     related: ["aretes-ala", "collar-halo", "pulsera-fe"],
@@ -184,6 +181,7 @@ export const PRODUCTS: Product[] = [
     carats: "1.10 ct c/u",
     price: 4120000,
     new: true,
+    active: false,
     sizes: ["Única"],
     certificateId: "ANG-EM-007",
     related: ["aretes-ala", "collar-muzo", "anillo-eterno"],
@@ -210,11 +208,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["40 cm", "45 cm", "50 cm"],
     certificateId: "ANG-EM-008",
     related: ["collar-muzo", "anillo-angel", "aretes-ala"],
-    images: [
-      "/images/productos/colgante-esmeralda-pera.jpg",
-      "https://images.unsplash.com/photo-1601121141461-9d6647bca1ed?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
-    ],
+    images: ["/images/productos/colgante-esmeralda-pera.jpg"],
     description:
       "Cadena veneciana en oro 18K y un colgante de esmeralda colombiana de tres quilates. El centro de una colección.",
     story:
@@ -228,6 +222,7 @@ export const PRODUCTS: Product[] = [
     material: "Oro 18K",
     emerald: false,
     price: 2890000,
+    active: false,
     sizes: ["40 cm", "45 cm"],
     certificateId: "ANG-OR-009",
     related: ["collar-halo", "aretes-luz", "pulsera-alada"],
@@ -250,6 +245,7 @@ export const PRODUCTS: Product[] = [
     emerald: true,
     carats: "4.20 ct",
     price: 9200000,
+    active: false,
     sizes: ["42 cm", "45 cm"],
     certificateId: "ANG-EM-010",
     related: ["collar-eterno", "anillo-eterno", "pulsera-tennis"],
@@ -271,6 +267,7 @@ export const PRODUCTS: Product[] = [
     material: "Oro 18K",
     emerald: false,
     price: 1950000,
+    active: false,
     sizes: ["40 cm", "45 cm", "50 cm"],
     certificateId: "ANG-OR-011",
     related: ["collar-angel", "pulsera-fe", "aretes-luz"],
@@ -293,6 +290,7 @@ export const PRODUCTS: Product[] = [
     emerald: false,
     price: 2990000,
     featured: true,
+    active: false,
     sizes: ["16 cm", "17 cm", "18 cm", "19 cm"],
     certificateId: "ANG-OR-012",
     related: ["pulsera-fe", "collar-angel", "anillo-serafin"],
@@ -315,6 +313,7 @@ export const PRODUCTS: Product[] = [
     emerald: true,
     carats: "5.80 ct total",
     price: 7500000,
+    active: false,
     sizes: ["16.5 cm", "17.5 cm", "18.5 cm"],
     certificateId: "ANG-EM-013",
     related: ["pulsera-origen", "collar-muzo", "aretes-muse"],
@@ -336,6 +335,7 @@ export const PRODUCTS: Product[] = [
     material: "Oro 18K",
     emerald: false,
     price: 1680000,
+    active: false,
     sizes: ["16 cm", "17 cm", "18 cm"],
     certificateId: "ANG-OR-014",
     related: ["pulsera-alada", "collar-halo", "aretes-luz"],
@@ -358,6 +358,7 @@ export const PRODUCTS: Product[] = [
     emerald: true,
     carats: "1.40 ct",
     price: 4350000,
+    active: false,
     sizes: ["16 cm", "17 cm", "18 cm", "19 cm"],
     certificateId: "ANG-EM-015",
     related: ["pulsera-tennis", "anillo-legado", "collar-eterno"],
@@ -383,11 +384,7 @@ export const PRODUCTS: Product[] = [
     sizes: ["5", "6", "7", "8", "9"],
     certificateId: "ANG-EM-016",
     related: ["anillo-angel", "aretes-muse", "collar-muzo"],
-    images: [
-      "/images/productos/anillo-esmeralda-banda.jpg",
-      "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1603561596112-0a132be14233?auto=format&fit=crop&w=1400&q=80",
-    ],
+    images: ["/images/productos/anillo-esmeralda-banda.jpg"],
     description:
       "Esmeralda con jardín visible, celebrado y no oculto. Un anillo para quien entiende que la autenticidad tiene textura.",
     story:
@@ -451,12 +448,18 @@ export function getProduct(slug: string) {
   return PRODUCTS.find((p) => p.slug === slug);
 }
 
+export function getActiveProducts() {
+  return PRODUCTS.filter((p) => p.active !== false);
+}
+
 export function getFeatured() {
-  return PRODUCTS.filter((p) => p.featured).slice(0, 5);
+  return getActiveProducts()
+    .filter((p) => p.featured)
+    .slice(0, 5);
 }
 
 export function getRelated(product: Product) {
   return product.related
     .map((slug) => getProduct(slug))
-    .filter((p): p is Product => Boolean(p));
+    .filter((p): p is Product => p != null && p.active !== false);
 }
