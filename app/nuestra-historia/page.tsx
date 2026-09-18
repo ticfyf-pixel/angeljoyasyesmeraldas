@@ -44,14 +44,14 @@ export default function HistoriaPage() {
         <div className="mt-16 grid gap-10 lg:grid-cols-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1456948927036-ad533e538fca?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.unsplash.com/photo-1777107508993-7c254c95668c?auto=format&fit=crop&w=1600&q=80"
             alt="Orfebre trabajando una pieza de oro en el taller"
             className="aspect-[4/5] w-full rounded-[4px] object-cover"
             loading="lazy"
           />
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1600&q=80"
+            src="https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1600&q=80"
             alt="Esmeraldas colombianas sobre superficie de piedra"
             className="aspect-[4/5] w-full rounded-[4px] object-cover lg:mt-16"
             loading="lazy"

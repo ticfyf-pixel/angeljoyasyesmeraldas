@@ -7,7 +7,7 @@ export function HistoryTeaser() {
         <div className="relative">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80"
+            src="https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1400&q=80"
             alt="Esmeraldas en bruto y talladas sobre piedra natural"
             className="aspect-[4/5] w-full rounded-[4px] object-cover"
             loading="lazy"

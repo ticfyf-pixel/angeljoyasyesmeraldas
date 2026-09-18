@@ -30,7 +30,7 @@ export default function EsmeraldasPage() {
       <section className="relative isolate min-h-[60vh]">
         {/* eslint-disable-next-line @next/next/no-img-element */}
         <img
-          src="https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=2000&q=80"
+          src="https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=2000&q=80"
           alt="Detalle de esmeraldas talladas"
           className="absolute inset-0 h-full w-full object-cover"
         />

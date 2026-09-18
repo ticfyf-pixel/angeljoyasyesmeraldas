@@ -121,7 +121,7 @@ export const PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1605100804763-247f67b3557e?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1400&q=80",
     ],
     description:
       "Esmeralda de 2 quilates en talla cojín, con pavé de diamantes champagne. Una pieza de alta joyería para ocasiones que marcan un antes y un después.",
@@ -190,7 +190,7 @@ export const PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1630019852942-f89202989a59?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1535632066927-ab7c9ab60908?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1400&q=80",
     ],
     description:
       "Esmeraldas en talla pera, engastadas en oro satinado. Presencia serena, proporcional al rostro.",
@@ -252,7 +252,7 @@ export const PRODUCTS: Product[] = [
     certificateId: "ANG-EM-010",
     related: ["collar-eterno", "anillo-eterno", "pulsera-tennis"],
     images: [
-      "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
     ],
@@ -321,7 +321,7 @@ export const PRODUCTS: Product[] = [
     related: ["pulsera-origen", "collar-muzo", "aretes-muse"],
     images: [
       "https://images.unsplash.com/photo-1602173574767-37ac01994b2a?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1400&q=80",
     ],
     description:
@@ -367,7 +367,7 @@ export const PRODUCTS: Product[] = [
     images: [
       "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?auto=format&fit=crop&w=1400&q=80",
       "https://images.unsplash.com/photo-1611591437281-460bfbe1220a?auto=format&fit=crop&w=1400&q=80",
-      "https://images.unsplash.com/photo-1573408301185-91476d153f1e?auto=format&fit=crop&w=1400&q=80",
+      "https://images.unsplash.com/photo-1678245687839-231ed039a18b?auto=format&fit=crop&w=1400&q=80",
     ],
     description:
       "Eslabones de oro y una esmeralda central en bisel. Equilibrio entre fuerza y ternura.",
