@@ -53,6 +53,7 @@ export function Footer() {
               <div className="mt-3 flex flex-col gap-2">
                 <a href={SITE.instagram} target="_blank" rel="noreferrer">Instagram</a>
                 <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a>
+                <a href={SITE.facebook} target="_blank" rel="noreferrer">Facebook</a>
               </div>
             </li>
           </ul>

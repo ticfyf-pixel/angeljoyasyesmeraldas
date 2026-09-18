@@ -9,6 +9,7 @@ export const SITE = {
   whatsapp: "573229809754",
   hours: "Lunes a sábado · 10:00 a. m. – 7:00 p. m.",
   instagram: "https://www.instagram.com/angel_joyasyesmeraldas",
+  facebook: "https://www.facebook.com/share/1JofX396xj/",
 };
 
 export type Category = "anillos" | "aretes" | "collares" | "pulseras";

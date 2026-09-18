@@ -19,6 +19,22 @@ export function Providers({ children }: { children: React.ReactNode }) {
       <Footer />
       <div className="fixed bottom-5 right-5 z-40 flex flex-col items-center gap-3">
         <a
+          href={SITE.facebook}
+          target="_blank"
+          rel="noreferrer"
+          aria-label="Ver en Facebook"
+          className="flex h-11 w-11 items-center justify-center rounded-full bg-gold-500 text-ink shadow-gold transition hover:bg-gold-300"
+        >
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path
+              d="M15 8.5h2V5.4c-.5-.07-1.5-.15-2.6-.15-2.6 0-4.2 1.55-4.2 4.4v2.2H7.5v3.1h2.7V21h3.2v-6.05h2.6l.4-3.1h-3V9.9c0-.9.25-1.4 1.6-1.4Z"
+              stroke="currentColor"
+              strokeWidth="1.3"
+              strokeLinejoin="round"
+            />
+          </svg>
+        </a>
+        <a
           href={SITE.instagram}
           target="_blank"
           rel="noreferrer"
