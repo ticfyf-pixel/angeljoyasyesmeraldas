@@ -4,10 +4,11 @@ export const SITE = {
   slogan: "Lujo con alma, brillo con propósito",
   city: "Medellín, Colombia",
   address: "El Poblado, Medellín, Colombia",
-  email: "hola@angeljoyas.com",
-  phone: "+57 304 555 0188",
-  whatsapp: "573045550188",
+  email: "angeljoyasyesmeraldas@gmail.com",
+  phone: "+57 322 980 9754",
+  whatsapp: "573229809754",
   hours: "Lunes a sábado · 10:00 a. m. – 7:00 p. m.",
+  instagram: "https://www.instagram.com/angel_joyasyesmeraldas",
 };
 
 export type Category = "anillos" | "aretes" | "collares" | "pulseras";

@@ -51,9 +51,8 @@ export function Footer() {
             <li>
               <p className="mt-6 text-[11px] uppercase tracking-nav text-gold-500">Síguenos</p>
               <div className="mt-3 flex flex-col gap-2">
-                <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
+                <a href={SITE.instagram} target="_blank" rel="noreferrer">Instagram</a>
                 <a href={`https://wa.me/${SITE.whatsapp}`} target="_blank" rel="noreferrer">WhatsApp</a>
-                <a href="https://facebook.com" target="_blank" rel="noreferrer">Facebook</a>
               </div>
             </li>
           </ul>
