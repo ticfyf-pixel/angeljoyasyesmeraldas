@@ -19,7 +19,8 @@ const montserrat = Montserrat({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://angeljoyas.com"),
+  metadataBase: new URL(SITE.url),
+  alternates: { canonical: "./" },
   title: {
     default: `${SITE.name} | Joyería de lujo en Medellín`,
     template: `%s | ${SITE.shortName}`,
@@ -33,6 +34,7 @@ export const metadata: Metadata = {
     "anillos de oro con esmeralda colombiana",
   ],
   openGraph: {
+    url: "./",
     title: SITE.name,
     description: SITE.slogan,
     locale: "es_CO",
