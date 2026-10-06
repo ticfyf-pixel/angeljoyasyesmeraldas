@@ -1,4 +1,5 @@
 export const SITE = {
+  url: "https://angeljoyasyesmeraldas.com",
   name: "Ángel Joyas & Esmeraldas",
   shortName: "ÁNGEL",
   slogan: "Lujo con alma, brillo con propósito",
