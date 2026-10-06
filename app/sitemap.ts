@@ -1,10 +1,11 @@
 import type { MetadataRoute } from "next";
-import { CATEGORIES, getActiveProducts } from "@/data/products";
+import { CATEGORIES, SITE, getActiveProducts } from "@/data/products";
 
 export const dynamic = "force-static";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const base = "https://angeljoyas.com";
+  const base = SITE.url;
+  // trailingSlash: true en next.config → las URLs reales terminan en "/"
   const statics = [
     "",
     "/coleccion",
@@ -12,19 +13,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/esmeraldas",
     "/club-angel",
     "/contacto",
-    "/carrito",
-    "/checkout",
     "/legal/terminos",
     "/legal/privacidad",
     "/legal/devoluciones",
-  ].map((p) => ({ url: `${base}${p}`, lastModified: new Date() }));
+  ].map((p) => ({ url: `${base}${p}/`, lastModified: new Date() }));
 
   const cats = CATEGORIES.map((c) => ({
-    url: `${base}/coleccion/${c.slug}`,
+    url: `${base}/coleccion/${c.slug}/`,
     lastModified: new Date(),
   }));
   const products = getActiveProducts().map((p) => ({
-    url: `${base}/producto/${p.slug}`,
+    url: `${base}/producto/${p.slug}/`,
     lastModified: new Date(),
   }));
 
