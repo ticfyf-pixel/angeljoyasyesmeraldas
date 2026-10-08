@@ -1,4 +1,5 @@
 import { Button } from "./Button";
+import { WingsHeart } from "./Logo";
 
 export function Hero() {
   return (
@@ -14,7 +15,8 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 mx-auto w-full max-w-site px-5 pb-24 pt-36 md:px-10 lg:px-20">
-        <p className="animate-rise text-[11px] uppercase tracking-[0.32em] text-gold-300">
+        <WingsHeart className="w-56 md:w-72" />
+        <p className="mt-8 animate-rise text-[11px] uppercase tracking-[0.32em] text-gold-300">
           Joyas & Esmeraldas · Medellín
         </p>
         <h1 className="mt-6 max-w-3xl font-serif text-[36px] font-medium uppercase leading-[1.12] tracking-[0.12em] text-white md:text-[56px] md:leading-[1.14]">

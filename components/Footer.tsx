@@ -22,7 +22,7 @@ export function Footer() {
           <p className="mt-4 max-w-sm font-serif text-lg italic text-gold-300">
             “{SITE.slogan}”
           </p>
-          <WingsHeart className="mt-6 w-44" />
+          <WingsHeart className="mt-6 w-56 md:w-64" />
         </div>
 
         <div>
