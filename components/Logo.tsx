@@ -31,27 +31,16 @@ export function Monogram({ className = "w-16 h-16" }: { className?: string }) {
   );
 }
 
-export function WingsHeart({ className = "w-16 h-6" }: { className?: string }) {
+export function WingsHeart({ className = "w-40" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 120 28" className={className} aria-hidden="true" fill="none">
-      <path
-        d="M60 18 C58 14 54 12 52 15 C50 18 54 22 60 26 C66 22 70 18 68 15 C66 12 62 14 60 18 Z"
-        stroke="#C9A66B"
-        strokeWidth="1.2"
-      />
-      <path
-        d="M48 16 C36 8 18 10 12 16 C22 14 34 18 48 22"
-        stroke="#C9A66B"
-        strokeWidth="1.1"
-        strokeLinecap="round"
-      />
-      <path
-        d="M72 16 C84 8 102 10 108 16 C98 14 86 18 72 22"
-        stroke="#C9A66B"
-        strokeWidth="1.1"
-        strokeLinecap="round"
-      />
-    </svg>
+    // eslint-disable-next-line @next/next/no-img-element
+    <img
+      src="/images/sello-alas.png"
+      alt="El valor de lo eterno"
+      width={208}
+      height={135}
+      className={`aspect-[208/135] h-auto object-contain ${className}`}
+    />
   );
 }
 

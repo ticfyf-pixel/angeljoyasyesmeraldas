@@ -17,7 +17,7 @@ function ConfirmInner() {
   return (
     <div className="bg-cream text-ink">
       <div className="mx-auto max-w-xl px-5 pb-24 pt-36 text-center">
-        <WingsHeart className="mx-auto h-7 w-24" />
+        <WingsHeart className="mx-auto w-48" />
         <h1 className="mt-6 font-serif text-4xl tracking-wide2">Pedido confirmado</h1>
         <p className="mt-4 text-sm leading-7 text-ink/70">
           Gracias por confiar en Ángel. Tu número de orden es{" "}

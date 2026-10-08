@@ -42,7 +42,7 @@ export default async function CertificadoPage({
           <p className="text-center text-[10px] uppercase tracking-[0.22em] text-gold-500">
             Joyas & Esmeraldas
           </p>
-          <WingsHeart className="mx-auto mt-4 h-6 w-20" />
+          <WingsHeart className="mx-auto mt-5 w-44" />
           <h1 className="mt-10 text-center font-serif text-3xl">Certificado de autenticidad</h1>
           <div className="gold-line mx-auto mt-6 w-32" />
           <dl className="mx-auto mt-10 max-w-md space-y-3 text-sm">

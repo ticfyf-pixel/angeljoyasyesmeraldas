@@ -28,7 +28,7 @@ export function Newsletter() {
   return (
     <section className="texture-dark bg-angel-900">
       <div className="mx-auto max-w-2xl px-5 py-24 text-center md:px-10">
-        <WingsHeart className="mx-auto h-7 w-24" />
+        <WingsHeart className="mx-auto w-48" />
         <h2 className="mt-6 font-serif text-4xl tracking-[0.18em] text-cream md:text-5xl">
           ÚNETE AL CLUB ÁNGEL
         </h2>
