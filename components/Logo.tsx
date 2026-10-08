@@ -35,7 +35,7 @@ export function WingsHeart({ className = "w-40" }: { className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/sello-alas.png"
+      src="/images/sello-alas.png?v=2"
       alt="El valor de lo eterno"
       width={208}
       height={135}
