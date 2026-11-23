@@ -1,12 +1,23 @@
 "use client";
 
 import Link from "next/link";
+import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
 import { formatCOP, openWhatsApp, productQuoteMessage } from "@/lib/format";
 
 export function ProductCard({ product }: { product: Product }) {
+  const { items, addItem, openCart } = useCart();
+  const enCarrito = items
+    .filter((item) => item.id === product.id)
+    .reduce((sum, item) => sum + item.quantity, 0);
+
   function comprar() {
     openWhatsApp(productQuoteMessage(product, { size: product.sizes[0] }));
+  }
+
+  function llevar() {
+    addItem(product, product.sizes[0]);
+    openCart();
   }
 
   return (
@@ -44,6 +55,13 @@ export function ProductCard({ product }: { product: Product }) {
       >
         <WhatsAppIcon />
         Lo quiero por WhatsApp
+      </button>
+      <button
+        type="button"
+        onClick={llevar}
+        className="mt-3 block w-full text-center text-[12px] text-gold-500 underline underline-offset-4"
+      >
+        {enCarrito > 0 ? `En el carrito · ${enCarrito}` : "Llevarla con otras piezas"}
       </button>
     </article>
   );

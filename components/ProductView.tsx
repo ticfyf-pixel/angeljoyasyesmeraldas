@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
+import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
 import { getRelated } from "@/data/products";
 import { categoryLabel, formatCOP, openWhatsApp, productQuoteMessage } from "@/lib/format";
@@ -9,6 +10,7 @@ import { Button } from "./Button";
 import { ProductCard } from "./ProductCard";
 
 export function ProductView({ product }: { product: Product }) {
+  const { items, addItem, openCart } = useCart();
   const [size, setSize] = useState(product.sizes[0]);
   const [active, setActive] = useState(0);
   const [zoom, setZoom] = useState(false);
@@ -25,9 +27,16 @@ export function ProductView({ product }: { product: Product }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [zoom]);
 
+  const enCarrito = items.find((item) => item.id === product.id && item.size === size)?.quantity ?? 0;
+
   function comprar() {
     openWhatsApp(productQuoteMessage(product, { size }));
     setAviso(true);
+  }
+
+  function llevar() {
+    addItem(product, size);
+    openCart();
   }
 
   return (
@@ -122,6 +131,16 @@ export function ProductView({ product }: { product: Product }) {
               <Button type="button" onClick={comprar}>
                 Lo quiero por WhatsApp · {formatCOP(product.price)}
               </Button>
+              <button
+                type="button"
+                onClick={llevar}
+                className="mt-4 block text-[13px] text-gold-500 underline underline-offset-4"
+              >
+                Quiero llevarla con otras piezas
+              </button>
+              {enCarrito > 0 && (
+                <p className="mt-3 text-sm text-ink/70">En el carrito: {enCarrito}. Desde ahí puedes pedir todo por WhatsApp.</p>
+              )}
             </div>
 
             <Link
