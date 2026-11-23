@@ -10,7 +10,7 @@ export function Loader() {
 
   function enter() {
     setLeaving(true);
-    sessionStorage.setItem("angel-loader-v7", "1");
+    sessionStorage.setItem("angel-loader-v8", "1");
     window.setTimeout(() => setShow(false), 280);
   }
 
@@ -19,7 +19,7 @@ export function Loader() {
       setShow(false);
       return;
     }
-    if (sessionStorage.getItem("angel-loader-v7")) {
+    if (sessionStorage.getItem("angel-loader-v8")) {
       setShow(false);
       return;
     }
@@ -44,7 +44,7 @@ export function Loader() {
 
   return (
     <div
-      className={`fixed inset-0 z-[90] flex items-center justify-center bg-white transition-opacity duration-300 ${
+      className={`fixed inset-0 z-[90] flex items-center justify-center bg-angel-950 transition-opacity duration-300 ${
         leaving ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
@@ -57,7 +57,7 @@ export function Loader() {
         aria-label="Entrar a Ángel"
         className="transition-transform duration-300 ease-out"
       >
-        <WingsHeart className="w-[min(92vw,34rem)]" />
+        <WingsHeart onDark className="w-[min(92vw,34rem)]" />
       </button>
     </div>
   );

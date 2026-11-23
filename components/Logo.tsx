@@ -31,11 +31,11 @@ export function Monogram({ className = "w-16 h-16" }: { className?: string }) {
   );
 }
 
-export function WingsHeart({ className = "w-40" }: { className?: string }) {
+export function WingsHeart({ className = "w-40", onDark = false }: { className?: string; onDark?: boolean }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/sello-angel.jpg?v=1"
+      src={onDark ? "/images/sello-angel-claro.png?v=1" : "/images/sello-angel.png?v=1"}
       alt="Ángel Joyas y Esmeraldas"
       width={1024}
       height={1024}
