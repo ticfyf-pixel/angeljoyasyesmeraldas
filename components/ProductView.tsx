@@ -53,6 +53,7 @@ export function ProductView({ product }: { product: Product }) {
         </nav>
 
         <div className="mt-10 grid gap-12 lg:grid-cols-2">
+          <div>
           <div className="flex gap-4">
             <div className="hidden w-20 flex-col gap-3 md:flex">
               {product.images.map((src, idx) => (
@@ -90,6 +91,17 @@ export function ProductView({ product }: { product: Product }) {
                 style={{ transformOrigin: origin }}
               />
             </button>
+          </div>
+          {product.video && (
+            <video
+              src={product.video}
+              controls
+              playsInline
+              preload="metadata"
+              className="mt-4 w-full bg-angel-950"
+              aria-label={`Video de ${product.name}`}
+            />
+          )}
           </div>
 
           <div>
