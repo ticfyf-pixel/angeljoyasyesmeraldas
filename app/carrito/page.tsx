@@ -2,11 +2,11 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { formatCOP, openWhatsApp, orderPurchaseMessage } from "@/lib/format";
+import { openWhatsApp, orderPurchaseMessage } from "@/lib/format";
 import { Button } from "@/components/Button";
 
 export default function CarritoPage() {
-  const { items, subtotal, updateQty, removeItem } = useCart();
+  const { items, updateQty, removeItem } = useCart();
 
   return (
     <div className="bg-cream text-ink">
@@ -33,7 +33,6 @@ export default function CarritoPage() {
                     <p className="text-xs uppercase tracking-nav text-ink/60">
                       {item.material} · Talla {item.size}
                     </p>
-                    <p className="mt-2">{formatCOP(item.price)}</p>
                     <div className="mt-3 flex items-center gap-4">
                       <div className="flex border border-gold-500/40">
                         <button type="button" className="px-3" onClick={() => updateQty(item.id, item.size, item.quantity - 1)}>
@@ -53,11 +52,7 @@ export default function CarritoPage() {
               ))}
             </ul>
             <aside className="h-fit border border-gold-500/30 p-6">
-              <div className="flex justify-between font-serif text-2xl">
-                <span>Subtotal</span>
-                <span>{formatCOP(subtotal)}</span>
-              </div>
-              <p className="mt-2 text-xs text-ink/60">El envío y el pago se confirman por WhatsApp.</p>
+              <p className="text-xs text-ink/60">El envío y el pago se confirman por WhatsApp.</p>
               <Button
                 type="button"
                 className="mt-6 w-full"

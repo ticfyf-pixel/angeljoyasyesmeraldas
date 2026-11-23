@@ -2,7 +2,7 @@
 
 import { FormEvent, useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { formatCOP, openWhatsApp, orderPurchaseMessage } from "@/lib/format";
+import { openWhatsApp, orderPurchaseMessage } from "@/lib/format";
 import { Button } from "@/components/Button";
 
 const SHIPPING = [
@@ -12,13 +12,11 @@ const SHIPPING = [
 ];
 
 export default function CheckoutPage() {
-  const { items, subtotal, clear } = useCart();
+  const { items, clear } = useCart();
   const [ship, setShip] = useState(SHIPPING[0].id);
   const [error, setError] = useState("");
   const [open, setOpen] = useState<"envio" | "metodo" | "pago">("envio");
 
-  const shippingCost = SHIPPING.find((s) => s.id === ship)?.price ?? 0;
-  const total = subtotal + shippingCost;
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -42,7 +40,7 @@ export default function CheckoutPage() {
       `Teléfono: ${telefono}`,
       `Ciudad: ${ciudad}`,
       direccion ? `Dirección: ${direccion}` : null,
-      envio ? `Envío: ${envio.name} (${formatCOP(envio.price)})` : null,
+      envio ? `Envío: ${envio.name}` : null,
     ]
       .filter(Boolean)
       .join("\n");
@@ -74,14 +72,13 @@ export default function CheckoutPage() {
                     <span className="block font-medium">{s.name}</span>
                     <span className="text-xs text-ink/60">{s.days}</span>
                   </span>
-                  <span>{formatCOP(s.price)}</span>
                 </label>
               ))}
             </Accordion>
 
             <Accordion title="3. Pedido por WhatsApp" open={open === "pago"} onToggle={() => setOpen("pago")}>
               <p className="text-sm leading-6 text-ink/70">
-                Al confirmar se abre WhatsApp con las piezas, el total y tus datos. El pago y el envío se cierran en ese chat.
+                Al confirmar se abre WhatsApp con las piezas y tus datos. El valor, el pago y el envío se cierran en ese chat.
               </p>
             </Accordion>
 
@@ -95,22 +92,11 @@ export default function CheckoutPage() {
             <h2 className="font-serif text-2xl">Resumen</h2>
             <ul className="mt-4 space-y-3 text-sm">
               {items.map((i) => (
-                <li key={`${i.id}-${i.size}`} className="flex justify-between gap-3">
-                  <span>
-                    {i.name} × {i.quantity}
-                  </span>
-                  <span>{formatCOP(i.price * i.quantity)}</span>
+                <li key={`${i.id}-${i.size}`}>
+                  {i.name} × {i.quantity}
                 </li>
               ))}
             </ul>
-            <div className="mt-4 flex justify-between text-sm">
-              <span>Envío</span>
-              <span>{formatCOP(shippingCost)}</span>
-            </div>
-            <div className="mt-4 flex justify-between border-t border-gold-500/30 pt-4 font-serif text-2xl">
-              <span>Total</span>
-              <span>{formatCOP(total)}</span>
-            </div>
           </aside>
         </form>
       </div>

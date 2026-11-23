@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
-import { formatCOP, openWhatsApp, productQuoteMessage } from "@/lib/format";
+import { openWhatsApp, productQuoteMessage } from "@/lib/format";
 
 export function ProductCard({ product }: { product: Product }) {
   const { items, addItem, openCart } = useCart();
@@ -44,7 +44,6 @@ export function ProductCard({ product }: { product: Product }) {
               {product.material}
               {product.emerald ? " · Esmeralda" : ""}
             </p>
-            <p className="mt-2 text-sm text-ink">{formatCOP(product.price)}</p>
           </div>
         </div>
       </Link>

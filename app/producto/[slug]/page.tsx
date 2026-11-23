@@ -42,12 +42,6 @@ export default async function ProductoPage({
     image: product.images,
     sku: product.id,
     brand: { "@type": "Brand", name: "Ángel Joyas & Esmeraldas" },
-    offers: {
-      "@type": "Offer",
-      priceCurrency: "COP",
-      price: product.price,
-      availability: "https://schema.org/InStock",
-    },
   };
 
   return (

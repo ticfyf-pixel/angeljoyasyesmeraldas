@@ -5,13 +5,12 @@ import { CATEGORIES, getActiveProducts, type Category } from "@/data/products";
 import { ProductCard } from "@/components/ProductCard";
 import { Button } from "@/components/Button";
 
-type Sort = "relevancia" | "precio-asc" | "precio-desc" | "novedades";
+type Sort = "relevancia" | "novedades";
 
 export function CatalogClient({ initialCategory }: { initialCategory?: Category }) {
   const [category, setCategory] = useState<Category | "todas">(initialCategory ?? "todas");
   const [material, setMaterial] = useState<"todos" | "oro">("todos");
   const [emerald, setEmerald] = useState<"todas" | "si" | "no">("todas");
-  const [maxPrice, setMaxPrice] = useState(10000000);
   const [sort, setSort] = useState<Sort>("relevancia");
 
   const items = useMemo(() => {
@@ -20,20 +19,16 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
       if (material === "oro" && !p.material.toLowerCase().includes("oro")) return false;
       if (emerald === "si" && !p.emerald) return false;
       if (emerald === "no" && p.emerald) return false;
-      if (p.price > maxPrice) return false;
       return true;
     });
-    if (sort === "precio-asc") list = [...list].sort((a, b) => a.price - b.price);
-    if (sort === "precio-desc") list = [...list].sort((a, b) => b.price - a.price);
     if (sort === "novedades") list = [...list].sort((a, b) => Number(b.new) - Number(a.new));
     return list;
-  }, [category, material, emerald, maxPrice, sort]);
+  }, [category, material, emerald, sort]);
 
   function clear() {
     setCategory(initialCategory ?? "todas");
     setMaterial("todos");
     setEmerald("todas");
-    setMaxPrice(10000000);
     setSort("relevancia");
   }
 
@@ -108,19 +103,6 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
               </div>
             </fieldset>
 
-            <label className="mt-6 block text-[10px] uppercase tracking-nav text-ink/60">
-              Precio máximo · ${maxPrice.toLocaleString("es-CO")}
-              <input
-                type="range"
-                min={1500000}
-                max={10000000}
-                step={100000}
-                value={maxPrice}
-                onChange={(e) => setMaxPrice(Number(e.target.value))}
-                className="mt-3 w-full accent-gold-500"
-              />
-            </label>
-
             <button
               type="button"
               onClick={clear}
@@ -142,8 +124,6 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
                 >
                   <option value="relevancia">Relevancia</option>
                   <option value="novedades">Novedades</option>
-                  <option value="precio-asc">Precio: menor a mayor</option>
-                  <option value="precio-desc">Precio: mayor a menor</option>
                 </select>
               </label>
             </div>

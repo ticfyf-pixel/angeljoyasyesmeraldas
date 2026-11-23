@@ -4,7 +4,6 @@ import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
 import { getActiveProducts } from "@/data/products";
 import { useCart } from "@/context/CartContext";
-import { formatCOP } from "@/lib/format";
 
 export function SearchModal() {
   const { searchOpen, closeSearch } = useCart();
@@ -72,7 +71,6 @@ export function SearchModal() {
                   <span className="block font-serif text-lg">{p.name}</span>
                   <span className="text-xs text-ink/60">{p.material}</span>
                 </span>
-                <span className="text-sm">{formatCOP(p.price)}</span>
               </Link>
             </li>
           ))}

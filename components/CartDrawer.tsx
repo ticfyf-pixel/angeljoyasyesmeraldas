@@ -3,11 +3,11 @@
 import Link from "next/link";
 import { useEffect } from "react";
 import { useCart } from "@/context/CartContext";
-import { formatCOP, openWhatsApp, orderPurchaseMessage } from "@/lib/format";
+import { openWhatsApp, orderPurchaseMessage } from "@/lib/format";
 import { Button } from "./Button";
 
 export function CartDrawer() {
-  const { items, isOpen, closeCart, subtotal, updateQty, removeItem, count } = useCart();
+  const { items, isOpen, closeCart, updateQty, removeItem, count } = useCart();
 
   useEffect(() => {
     if (!isOpen) return;
@@ -77,7 +77,6 @@ export function CartDrawer() {
                     <p className="text-xs uppercase tracking-[0.1em] text-ink/60">
                       {item.material} · Talla {item.size}
                     </p>
-                    <p className="mt-1 text-sm">{formatCOP(item.price)}</p>
                     <div className="mt-2 flex items-center gap-3">
                       <div className="flex items-center border border-gold-500/50">
                         <button
@@ -114,10 +113,6 @@ export function CartDrawer() {
         </div>
 
         <footer className="border-t border-gold-500/30 px-6 py-6">
-          <div className="mb-1 flex justify-between font-serif text-xl">
-            <span>Subtotal</span>
-            <span>{formatCOP(subtotal)}</span>
-          </div>
           <p className="mb-5 text-xs text-ink/60">El envío y el pago se confirman por WhatsApp.</p>
           <Button
             type="button"

@@ -45,7 +45,6 @@ export function productQuoteMessage(product: Product, extras?: { size?: string }
     "",
     `*${product.name}*`,
     details,
-    `Precio: ${formatCOP(product.price)}`,
     "",
     "Me confirmas y la dejo apartada.",
     `Foto: ${photo}`,
@@ -65,14 +64,12 @@ export type OrderLine = {
 };
 
 export function orderPurchaseMessage(lines: OrderLine[], note?: string) {
-  const total = lines.reduce((sum, line) => sum + line.price * line.quantity, 0);
   const pieces = lines
     .map((line, index) =>
       [
         `*${index + 1}. ${line.name}*`,
         `${line.material} · Talla ${line.size}`,
-        `Cantidad: ${line.quantity} × ${formatCOP(line.price)}`,
-        `Subtotal: ${formatCOP(line.price * line.quantity)}`,
+        `Cantidad: ${line.quantity}`,
         absoluteUrl(`/producto/${line.slug}/`),
       ].join("\n"),
     )
@@ -84,7 +81,6 @@ export function orderPurchaseMessage(lines: OrderLine[], note?: string) {
     "",
     pieces,
     "",
-    `*Total: ${formatCOP(total)}*`,
     "El envío y el pago se confirman por este chat.",
     note?.trim() ? `\n${note.trim()}` : null,
   ]

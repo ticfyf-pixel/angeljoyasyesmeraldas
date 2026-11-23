@@ -5,7 +5,7 @@ import { useEffect, useMemo, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
 import { getRelated } from "@/data/products";
-import { categoryLabel, formatCOP, openWhatsApp, productQuoteMessage } from "@/lib/format";
+import { categoryLabel, openWhatsApp, productQuoteMessage } from "@/lib/format";
 import { Button } from "./Button";
 import { ProductCard } from "./ProductCard";
 
@@ -98,7 +98,6 @@ export function ProductView({ product }: { product: Product }) {
               {product.carats ? ` · ${product.carats}` : ""}
             </p>
             <h1 className="mt-3 font-serif text-4xl md:text-5xl">{product.name}</h1>
-            <p className="mt-4 font-serif text-3xl text-angel-900">{formatCOP(product.price)}</p>
             <p className="mt-6 max-w-md text-sm leading-7 text-ink/75">{product.description}</p>
             <p className="mt-4 max-w-md text-sm leading-7 text-ink/75">{product.story}</p>
 
@@ -129,7 +128,7 @@ export function ProductView({ product }: { product: Product }) {
                 </p>
               )}
               <Button type="button" onClick={comprar}>
-                Lo quiero por WhatsApp · {formatCOP(product.price)}
+                Lo quiero por WhatsApp
               </Button>
               <button
                 type="button"

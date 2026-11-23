@@ -4,13 +4,11 @@ import { useSearchParams } from "next/navigation";
 import { Suspense } from "react";
 import { PRODUCTS } from "@/data/products";
 import { Button } from "@/components/Button";
-import { formatCOP } from "@/lib/format";
 import { WingsHeart } from "@/components/Logo";
 
 function ConfirmInner() {
   const sp = useSearchParams();
   const orden = sp.get("orden") ?? "ANG-00000000";
-  const total = Number(sp.get("total") ?? 0);
   const first = (sp.get("ids") ?? "").split(",")[0];
   const product = PRODUCTS.find((p) => p.slug === first) ?? PRODUCTS[0];
 
@@ -23,7 +21,6 @@ function ConfirmInner() {
           Gracias por confiar en Ángel. Tu número de orden es{" "}
           <strong className="text-angel-900">{orden}</strong>.
         </p>
-        <p className="mt-2 font-serif text-2xl">{formatCOP(total)}</p>
         <p className="mt-6 text-sm text-ink/70">
           Recibirás un correo de confirmación con identidad de marca. El certificado de autenticidad queda adjunto a tu pieza.
         </p>
