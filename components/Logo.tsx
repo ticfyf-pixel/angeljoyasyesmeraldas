@@ -35,11 +35,11 @@ export function WingsHeart({ className = "w-40" }: { className?: string }) {
   return (
     // eslint-disable-next-line @next/next/no-img-element
     <img
-      src="/images/sello-alas.png?v=2"
+      src="/images/sello-alas.svg?v=3"
       alt="El valor de lo eterno"
-      width={208}
-      height={135}
-      className={`aspect-[208/135] h-auto object-contain ${className}`}
+      width={1000}
+      height={620}
+      className={`aspect-[1000/620] h-auto object-contain ${className}`}
     />
   );
 }

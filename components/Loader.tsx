@@ -10,7 +10,7 @@ export function Loader() {
 
   function enter() {
     setLeaving(true);
-    sessionStorage.setItem("angel-loader-v5", "1");
+    sessionStorage.setItem("angel-loader-v6", "1");
     window.setTimeout(() => setShow(false), 280);
   }
 
@@ -19,7 +19,7 @@ export function Loader() {
       setShow(false);
       return;
     }
-    if (sessionStorage.getItem("angel-loader-v5")) {
+    if (sessionStorage.getItem("angel-loader-v6")) {
       setShow(false);
       return;
     }
@@ -65,7 +65,6 @@ export function Loader() {
           className="mt-8 transition-transform duration-300 ease-out"
         >
           <span className="seal-live relative block">
-            <span className="seal-glow" aria-hidden="true" />
             <WingsHeart className="relative w-72 sm:w-[28rem]" />
           </span>
         </button>
@@ -76,27 +75,11 @@ export function Loader() {
           0%, 100% { transform: translateY(0); }
           50% { transform: translateY(-8px); }
         }
-        @keyframes seal-glow {
-          0%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.92); }
-          50% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.04); }
-        }
         @keyframes seal-rule {
           from { transform: scaleX(0); opacity: 0; }
           to { transform: scaleX(1); opacity: 1; }
         }
         .seal-live { animation: seal-float 4.8s ease-in-out infinite; }
-        .seal-glow {
-          position: absolute;
-          left: 50%;
-          top: 40%;
-          width: 34%;
-          height: 38%;
-          border-radius: 999px;
-          background: radial-gradient(circle, rgba(232, 201, 137, 0.55), transparent 70%);
-          filter: blur(16px);
-          animation: seal-glow 3.6s ease-in-out infinite;
-          pointer-events: none;
-        }
         .seal-rule {
           display: block;
           width: 4.5rem;
@@ -107,7 +90,7 @@ export function Loader() {
           animation: seal-rule 1.1s ease 0.35s both;
         }
         @media (prefers-reduced-motion: reduce) {
-          .seal-live, .seal-glow, .seal-rule { animation: none; }
+          .seal-live, .seal-rule { animation: none; }
         }
       `}</style>
     </div>
