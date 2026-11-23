@@ -10,8 +10,8 @@ export function Loader() {
 
   function enter() {
     setLeaving(true);
-    sessionStorage.setItem("angel-loader-v3", "1");
-    window.setTimeout(() => setShow(false), 480);
+    sessionStorage.setItem("angel-loader-v4", "1");
+    window.setTimeout(() => setShow(false), 700);
   }
 
   useEffect(() => {
@@ -19,11 +19,11 @@ export function Loader() {
       setShow(false);
       return;
     }
-    if (sessionStorage.getItem("angel-loader-v3")) {
+    if (sessionStorage.getItem("angel-loader-v4")) {
       setShow(false);
       return;
     }
-    const t = window.setTimeout(enter, 5600);
+    const t = window.setTimeout(enter, 6800);
     return () => window.clearTimeout(t);
   }, []);
 
@@ -33,7 +33,7 @@ export function Loader() {
     const r = el.getBoundingClientRect();
     const x = (e.clientX - r.left) / r.width - 0.5;
     const y = (e.clientY - r.top) / r.height - 0.5;
-    el.style.transform = `perspective(800px) rotateY(${x * 16}deg) rotateX(${-y * 12}deg)`;
+    el.style.transform = `perspective(900px) rotateY(${x * 7}deg) rotateX(${-y * 5}deg)`;
   }
 
   function onLeave() {
@@ -44,51 +44,71 @@ export function Loader() {
 
   return (
     <div
-      className={`fixed inset-0 z-[90] flex flex-col items-center justify-center bg-angel-950 transition-opacity duration-500 ${
+      className={`fixed inset-0 z-[90] flex items-center justify-center bg-angel-950 transition-opacity duration-700 ${
         leaving ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
-      <button
-        ref={tilt}
-        type="button"
-        onClick={enter}
-        onMouseMove={onMove}
-        onMouseLeave={onLeave}
-        aria-label="Entrar a Ángel"
-        className="transition-transform duration-150 ease-out"
-      >
-        <span className="seal-live relative block">
-          <span className="seal-glow" aria-hidden="true" />
-          <WingsHeart className="relative w-64 sm:w-80" />
-        </span>
-      </button>
-      <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.28em] text-gold-300/80">
-        Toca el corazón
-      </p>
+      <span className="pointer-events-none absolute left-5 top-5 h-12 w-12 border-l border-t border-gold-500/70 sm:left-10 sm:top-10" />
+      <span className="pointer-events-none absolute right-5 top-5 h-12 w-12 border-r border-t border-gold-500/70 sm:right-10 sm:top-10" />
+      <span className="pointer-events-none absolute bottom-5 left-5 h-12 w-12 border-b border-l border-gold-500/70 sm:bottom-10 sm:left-10" />
+      <span className="pointer-events-none absolute bottom-5 right-5 h-12 w-12 border-b border-r border-gold-500/70 sm:bottom-10 sm:right-10" />
+
+      <div className="flex flex-col items-center px-8 text-center">
+        <p className="text-[10px] uppercase tracking-[0.48em] text-gold-300/80">Ángel · Medellín</p>
+        <button
+          ref={tilt}
+          type="button"
+          onClick={enter}
+          onMouseMove={onMove}
+          onMouseLeave={onLeave}
+          aria-label="Entrar a Ángel"
+          className="mt-8 transition-transform duration-300 ease-out"
+        >
+          <span className="seal-live relative block">
+            <span className="seal-glow" aria-hidden="true" />
+            <WingsHeart className="relative w-72 sm:w-[28rem]" />
+          </span>
+        </button>
+        <span className="seal-rule" aria-hidden="true" />
+        <p className="mt-7 text-[10px] uppercase tracking-[0.46em] text-cream/75">Entrar</p>
+      </div>
       <style>{`
         @keyframes seal-float {
           0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-12px); }
+          50% { transform: translateY(-8px); }
         }
         @keyframes seal-glow {
-          0%, 100% { opacity: 0.28; transform: translate(-50%, -50%) scale(0.9); }
-          50% { opacity: 0.75; transform: translate(-50%, -50%) scale(1.08); }
+          0%, 100% { opacity: 0.22; transform: translate(-50%, -50%) scale(0.92); }
+          50% { opacity: 0.55; transform: translate(-50%, -50%) scale(1.04); }
         }
-        .seal-live { animation: seal-float 3.2s ease-in-out infinite; }
+        @keyframes seal-rule {
+          from { transform: scaleX(0); opacity: 0; }
+          to { transform: scaleX(1); opacity: 1; }
+        }
+        .seal-live { animation: seal-float 4.8s ease-in-out infinite; }
         .seal-glow {
           position: absolute;
           left: 50%;
-          top: 38%;
-          width: 42%;
-          height: 46%;
+          top: 40%;
+          width: 34%;
+          height: 38%;
           border-radius: 999px;
-          background: radial-gradient(circle, rgba(232, 201, 137, 0.7), transparent 68%);
-          filter: blur(14px);
-          animation: seal-glow 2.4s ease-in-out infinite;
+          background: radial-gradient(circle, rgba(232, 201, 137, 0.55), transparent 70%);
+          filter: blur(16px);
+          animation: seal-glow 3.6s ease-in-out infinite;
           pointer-events: none;
         }
+        .seal-rule {
+          display: block;
+          width: 4.5rem;
+          height: 1px;
+          margin-top: 1.75rem;
+          background: rgba(201, 166, 107, 0.85);
+          transform-origin: center;
+          animation: seal-rule 1.1s ease 0.35s both;
+        }
         @media (prefers-reduced-motion: reduce) {
-          .seal-live, .seal-glow { animation: none; }
+          .seal-live, .seal-glow, .seal-rule { animation: none; }
         }
       `}</style>
     </div>

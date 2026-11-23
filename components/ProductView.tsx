@@ -61,13 +61,13 @@ export function ProductView({ product }: { product: Product }) {
                   key={src}
                   type="button"
                   onClick={() => setActive(idx)}
-                  className={`overflow-hidden rounded-[4px] border ${
-                    active === idx ? "border-gold-500" : "border-transparent"
+                  className={`overflow-hidden border bg-[#120e0c] ${
+                    active === idx ? "border-gold-500" : "border-gold-500/20"
                   }`}
                   aria-label={`Ver imagen ${idx + 1} de ${product.name}`}
                 >
                   {/* eslint-disable-next-line @next/next/no-img-element */}
-                  <img src={src} alt="" className="h-20 w-20 object-cover" loading="lazy" />
+                  <img src={src} alt="" className="h-20 w-20 object-contain p-1.5" loading="lazy" />
                 </button>
               ))}
             </div>
@@ -90,6 +90,7 @@ export function ProductView({ product }: { product: Product }) {
                 className="h-full w-full object-contain p-6 md:p-10"
                 style={{ transformOrigin: origin }}
               />
+              <span className="pointer-events-none absolute inset-4 border border-gold-500/25 md:inset-6" />
             </button>
           </div>
           {product.video && (
