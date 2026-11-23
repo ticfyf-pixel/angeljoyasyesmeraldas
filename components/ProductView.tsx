@@ -2,18 +2,17 @@
 
 import Link from "next/link";
 import { useEffect, useMemo, useState } from "react";
-import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
 import { getRelated } from "@/data/products";
-import { categoryLabel, formatCOP, whatsappLink } from "@/lib/format";
+import { categoryLabel, formatCOP, openWhatsApp, productQuoteMessage } from "@/lib/format";
 import { Button } from "./Button";
 import { ProductCard } from "./ProductCard";
 
 export function ProductView({ product }: { product: Product }) {
-  const { addItem } = useCart();
   const [size, setSize] = useState(product.sizes[0]);
   const [active, setActive] = useState(0);
   const [zoom, setZoom] = useState(false);
+  const [aviso, setAviso] = useState(false);
   const [origin, setOrigin] = useState("50% 50%");
   const related = useMemo(() => getRelated(product), [product]);
 
@@ -26,9 +25,10 @@ export function ProductView({ product }: { product: Product }) {
     return () => document.removeEventListener("keydown", onKey);
   }, [zoom]);
 
-  const wa = whatsappLink(
-    `Hola, quiero asesoría sobre ${product.name} (${product.id}), talla ${size}.`
-  );
+  function comprar() {
+    openWhatsApp(productQuoteMessage(product, { size }));
+    setAviso(true);
+  }
 
   return (
     <div className="bg-cream text-ink">
@@ -113,12 +113,14 @@ export function ProductView({ product }: { product: Product }) {
               </div>
             </fieldset>
 
-            <div className="mt-8 flex flex-wrap gap-3">
-              <Button type="button" onClick={() => addItem(product, size)}>
-                Agregar al carrito
-              </Button>
-              <Button href={wa} variant="secondary">
-                Consultar por WhatsApp
+            <div className="mt-8">
+              {aviso && (
+                <p className="mb-4 text-sm leading-6 text-ink/75">
+                  Listo. El mensaje ya está en WhatsApp. Solo tienes que enviarlo. Si no se abrió, toca el botón otra vez.
+                </p>
+              )}
+              <Button type="button" onClick={comprar}>
+                Lo quiero por WhatsApp · {formatCOP(product.price)}
               </Button>
             </div>
 

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { useCart } from "@/context/CartContext";
-import { formatCOP } from "@/lib/format";
+import { formatCOP, openWhatsApp, orderPurchaseMessage } from "@/lib/format";
 import { Button } from "@/components/Button";
 
 export default function CarritoPage() {
@@ -57,9 +57,13 @@ export default function CarritoPage() {
                 <span>Subtotal</span>
                 <span>{formatCOP(subtotal)}</span>
               </div>
-              <p className="mt-2 text-xs text-ink/60">Envío calculado en el checkout</p>
-              <Button href="/checkout" className="mt-6 w-full">
-                Ir a pagar
+              <p className="mt-2 text-xs text-ink/60">El envío y el pago se confirman por WhatsApp.</p>
+              <Button
+                type="button"
+                className="mt-6 w-full"
+                onClick={() => openWhatsApp(orderPurchaseMessage(items))}
+              >
+                Pedir por WhatsApp
               </Button>
             </aside>
           </div>

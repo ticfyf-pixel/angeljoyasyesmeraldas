@@ -1,9 +1,8 @@
 "use client";
 
-import { FormEvent, useMemo, useState } from "react";
-import { useRouter } from "next/navigation";
+import { FormEvent, useState } from "react";
 import { useCart } from "@/context/CartContext";
-import { formatCOP } from "@/lib/format";
+import { formatCOP, openWhatsApp, orderPurchaseMessage } from "@/lib/format";
 import { Button } from "@/components/Button";
 
 const SHIPPING = [
@@ -14,33 +13,41 @@ const SHIPPING = [
 
 export default function CheckoutPage() {
   const { items, subtotal, clear } = useCart();
-  const router = useRouter();
   const [ship, setShip] = useState(SHIPPING[0].id);
-  const [pay, setPay] = useState("tarjeta");
   const [error, setError] = useState("");
   const [open, setOpen] = useState<"envio" | "metodo" | "pago">("envio");
 
   const shippingCost = SHIPPING.find((s) => s.id === ship)?.price ?? 0;
   const total = subtotal + shippingCost;
-  const ids = useMemo(
-    () => items.map((i) => i.slug).join(","),
-    [items]
-  );
 
   function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     const fd = new FormData(e.currentTarget);
-    if (!fd.get("nombre") || !fd.get("email") || !fd.get("direccion")) {
-      setError("Completa los datos de envío.");
+    const nombre = String(fd.get("nombre") || "").trim();
+    const telefono = String(fd.get("telefono") || "").trim();
+    const ciudad = String(fd.get("ciudad") || "").trim();
+    const direccion = String(fd.get("direccion") || "").trim();
+    if (!nombre || !telefono || !ciudad) {
+      setError("Completa nombre, teléfono y ciudad.");
       return;
     }
     if (items.length === 0) {
       setError("Tu carrito está vacío.");
       return;
     }
-    const order = `ANG-${Date.now().toString().slice(-8)}`;
+    const envio = SHIPPING.find((s) => s.id === ship);
+    const note = [
+      "Datos para el envío",
+      `Nombre: ${nombre}`,
+      `Teléfono: ${telefono}`,
+      `Ciudad: ${ciudad}`,
+      direccion ? `Dirección: ${direccion}` : null,
+      envio ? `Envío: ${envio.name} (${formatCOP(envio.price)})` : null,
+    ]
+      .filter(Boolean)
+      .join("\n");
+    openWhatsApp(orderPurchaseMessage(items, note));
     clear();
-    router.push(`/checkout/confirmacion?orden=${order}&total=${total}&ids=${ids}`);
   }
 
   return (
@@ -72,34 +79,15 @@ export default function CheckoutPage() {
               ))}
             </Accordion>
 
-            <Accordion title="3. Método de pago" open={open === "pago"} onToggle={() => setOpen("pago")}>
-              <p className="mb-4 text-xs leading-5 text-ink/60">
-                Pasarela de demostración inspirada en Wompi (Colombia). En producción se conecta la llave pública de Wompi, PayU o Mercado Pago.
+            <Accordion title="3. Pedido por WhatsApp" open={open === "pago"} onToggle={() => setOpen("pago")}>
+              <p className="text-sm leading-6 text-ink/70">
+                Al confirmar se abre WhatsApp con las piezas, el total y tus datos. El pago y el envío se cierran en ese chat.
               </p>
-              {[
-                { id: "tarjeta", label: "Tarjeta débito / crédito" },
-                { id: "pse", label: "PSE" },
-                { id: "nequi", label: "Nequi" },
-              ].map((m) => (
-                <label key={m.id} className="mb-2 flex gap-3">
-                  <input type="radio" name="pay" checked={pay === m.id} onChange={() => setPay(m.id)} />
-                  {m.label}
-                </label>
-              ))}
-              {pay === "tarjeta" && (
-                <div className="mt-6 space-y-6">
-                  <Field id="card" label="Número de tarjeta (demo)" placeholder="4242 4242 4242 4242" />
-                  <div className="grid grid-cols-2 gap-6">
-                    <Field id="exp" label="Vence" placeholder="12/28" />
-                    <Field id="cvv" label="CVV" placeholder="123" />
-                  </div>
-                </div>
-              )}
             </Accordion>
 
             {error && <p className="text-sm text-coral">{error}</p>}
             <Button type="submit" className="mt-4">
-              Confirmar pedido
+              Pedir por WhatsApp
             </Button>
           </div>
 
