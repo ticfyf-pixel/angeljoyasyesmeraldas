@@ -7,6 +7,7 @@ import { Guarantees } from "@/components/Guarantees";
 import { Testimonials } from "@/components/Testimonials";
 import { Newsletter } from "@/components/Newsletter";
 import { Button } from "@/components/Button";
+import { HowToBuy, Moments } from "@/components/Sales";
 import { getFeatured } from "@/data/products";
 
 export default function HomePage() {
@@ -16,17 +17,21 @@ export default function HomePage() {
     <>
       <Hero />
       <ValueBar />
+      <Moments />
       <section className="bg-cream text-ink">
         <div className="mx-auto max-w-site px-5 py-24 md:px-10 lg:px-20">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-angel-700">Selección</p>
+              <p className="text-[11px] uppercase tracking-[0.28em] text-angel-700">Empieza por aquí</p>
               <h2 className="mt-3 font-serif text-4xl tracking-wide2 md:text-5xl">
-                Colección destacada
+                Elige la tuya
               </h2>
+              <p className="mt-4 max-w-md text-sm leading-6 text-ink/70">
+                Estas son las piezas con las que más nos escriben. El valor se confirma por WhatsApp.
+              </p>
             </div>
             <Button href="/coleccion" variant="dark">
-              Ver todo
+              Ver la colección
             </Button>
           </div>
           <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
@@ -36,6 +41,7 @@ export default function HomePage() {
           </div>
         </div>
       </section>
+      <HowToBuy />
       <HistoryTeaser />
       <StatsBar />
       <Guarantees />

@@ -41,7 +41,7 @@ export function ProductView({ product }: { product: Product }) {
 
   return (
     <div className="bg-cream text-ink">
-      <div className="mx-auto max-w-site px-5 pb-24 pt-32 md:px-10 lg:px-20">
+      <div className="mx-auto max-w-site px-5 pb-32 pt-32 md:px-10 md:pb-24 lg:px-20">
         <nav className="text-[11px] uppercase tracking-nav text-ink/50" aria-label="Miga de pan">
           <Link href="/">Inicio</Link>
           <span> / </span>
@@ -128,15 +128,21 @@ export function ProductView({ product }: { product: Product }) {
               </div>
             </fieldset>
 
-            <div className="mt-8">
+            <div className="mt-8 border border-gold-500/30 bg-white/60 p-5">
+              <p className="font-serif text-2xl">Déjala apartada hoy</p>
+              <p className="mt-2 max-w-md text-sm leading-6 text-ink/70">
+                El valor, la talla y el envío se cierran por WhatsApp. Sale con certificado y empaque firmado.
+              </p>
               {aviso && (
-                <p className="mb-4 text-sm leading-6 text-ink/75">
+                <p className="mt-4 text-sm leading-6 text-ink/75">
                   Listo. El mensaje ya está en WhatsApp. Solo tienes que enviarlo. Si no se abrió, toca el botón otra vez.
                 </p>
               )}
-              <Button type="button" onClick={comprar}>
-                Lo quiero por WhatsApp
-              </Button>
+              <div className="mt-5">
+                <Button type="button" onClick={comprar} className="w-full sm:w-auto">
+                  Lo quiero por WhatsApp
+                </Button>
+              </div>
               <button
                 type="button"
                 onClick={llevar}
@@ -147,6 +153,9 @@ export function ProductView({ product }: { product: Product }) {
               {enCarrito > 0 && (
                 <p className="mt-3 text-sm text-ink/70">En el carrito: {enCarrito}. Desde ahí puedes pedir todo por WhatsApp.</p>
               )}
+              <p className="mt-4 text-sm leading-6 text-ink/65">
+                ¿Es un regalo? Escríbelo en el chat y la empacamos para entregar.
+              </p>
             </div>
 
             <Link
@@ -168,6 +177,16 @@ export function ProductView({ product }: { product: Product }) {
             </div>
           </section>
         )}
+      </div>
+
+      <div className="fixed inset-x-0 bottom-0 z-40 border-t border-gold-500/30 bg-cream/95 p-3 backdrop-blur md:hidden">
+        <button
+          type="button"
+          onClick={comprar}
+          className="flex min-h-12 w-full items-center justify-center bg-angel-950 text-[11px] uppercase tracking-[0.16em] text-gold-300"
+        >
+          Lo quiero por WhatsApp
+        </button>
       </div>
 
       {zoom && (

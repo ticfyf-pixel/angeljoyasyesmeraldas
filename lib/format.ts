@@ -46,7 +46,7 @@ export function productQuoteMessage(product: Product, extras?: { size?: string }
     `*${product.name}*`,
     details,
     "",
-    "Me confirmas y la dejo apartada.",
+    "Me confirmas disponibilidad y la dejo apartada hoy.",
     `Foto: ${photo}`,
     page,
   ]
@@ -81,7 +81,7 @@ export function orderPurchaseMessage(lines: OrderLine[], note?: string) {
     "",
     pieces,
     "",
-    "El envío y el pago se confirman por este chat.",
+    "Quiero dejarlas apartadas hoy. El envío y el pago se confirman por este chat.",
     note?.trim() ? `\n${note.trim()}` : null,
   ]
     .filter((line) => line !== null)

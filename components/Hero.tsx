@@ -1,3 +1,4 @@
+import { whatsappLink } from "@/lib/format";
 import { Button } from "./Button";
 
 export function Hero() {
@@ -25,14 +26,20 @@ export function Hero() {
           Angelicales.
         </h1>
         <p className="mt-6 max-w-md text-base leading-7 text-gold-300">
-          Joyas en oro y esmeraldas colombianas certificadas, creadas para brillar con propósito.
+          Elige tu joya en oro y esmeralda. Te confirmamos talla y envío por WhatsApp, y la dejamos apartada.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
-          <Button href="/coleccion">Explorar colección</Button>
-          <Button href="/nuestra-historia" variant="secondary">
-            Nuestra historia
+          <Button href="/coleccion">Ver las piezas</Button>
+          <Button
+            href={whatsappLink("Hola! Quiero comprar una joya de Ángel. ¿Me asesoras?")}
+            variant="secondary"
+          >
+            Pedir asesoría
           </Button>
         </div>
+        <p className="mt-6 text-[10px] uppercase tracking-[0.2em] text-gold-300/80">
+          Respuesta en el día · Hecho en Medellín · Certificado incluido
+        </p>
       </div>
 
       <div className="scroll-indicator absolute bottom-8 left-1/2 z-10 hidden -translate-x-1/2 text-center md:block">

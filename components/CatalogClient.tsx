@@ -36,9 +36,9 @@ export function CatalogClient({ initialCategory }: { initialCategory?: Category 
     <div className="bg-cream text-ink">
       <div className="mx-auto max-w-site px-5 pb-24 pt-32 md:px-10 lg:px-20">
         <p className="text-[11px] uppercase tracking-[0.28em] text-angel-700">Catálogo</p>
-        <h1 className="mt-3 font-serif text-4xl tracking-wide2 md:text-5xl">Colección</h1>
+        <h1 className="mt-3 font-serif text-4xl tracking-wide2 md:text-5xl">Elige tu pieza</h1>
         <p className="mt-4 max-w-xl text-sm leading-7 text-ink/70">
-          Oro 18K y esmeraldas colombianas certificadas. Filtra por tipo, material y brillo.
+          Oro 18K y esmeraldas certificadas, hechas en Medellín. Toca “Lo quiero por WhatsApp” y la dejamos apartada. El valor se confirma en el chat.
         </p>
 
         <div className="mt-12 grid gap-10 lg:grid-cols-[260px_1fr]">

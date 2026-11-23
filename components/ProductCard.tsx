@@ -45,6 +45,7 @@ export function ProductCard({ product }: { product: Product }) {
             {product.material}
             {product.emerald ? " · Esmeralda" : ""}
           </p>
+          <p className="mt-2 text-[12px] text-ink/60">Se aparta hoy por WhatsApp</p>
         </Link>
       </div>
       <button
