@@ -10,7 +10,7 @@ import { Button } from "@/components/Button";
 import { getFeatured } from "@/data/products";
 
 export default function HomePage() {
-  const featured = getFeatured();
+  const featured = getFeatured().slice(0, 4);
 
   return (
     <>
@@ -29,7 +29,7 @@ export default function HomePage() {
               Ver todo
             </Button>
           </div>
-          <div className="mt-12 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-5">
+          <div className="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:grid-cols-4">
             {featured.map((p) => (
               <ProductCard key={p.id} product={p} />
             ))}

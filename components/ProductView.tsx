@@ -97,7 +97,14 @@ export function ProductView({ product }: { product: Product }) {
               {product.material}
               {product.carats ? ` · ${product.carats}` : ""}
             </p>
-            <h1 className="mt-3 font-serif text-4xl md:text-5xl">{product.name}</h1>
+            <h1 className="mt-3 font-serif text-4xl md:text-6xl">{product.name}</h1>
+            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/50">
+              <li>Certificado</li>
+              <li className="text-gold-500">·</li>
+              <li>Hecho en Medellín</li>
+              <li className="text-gold-500">·</li>
+              <li>Envío asegurado</li>
+            </ul>
             <p className="mt-6 max-w-md text-sm leading-7 text-ink/75">{product.description}</p>
             <p className="mt-4 max-w-md text-sm leading-7 text-ink/75">{product.story}</p>
 
@@ -109,10 +116,10 @@ export function ProductView({ product }: { product: Product }) {
                     key={s}
                     type="button"
                     onClick={() => setSize(s)}
-                    className={`min-w-12 border px-3 py-2 text-sm ${
+                    className={`min-h-11 min-w-11 border px-3 text-sm tracking-wide transition ${
                       size === s
-                        ? "border-gold-500 bg-gold-500 text-ink"
-                        : "border-gold-500/40 text-ink"
+                        ? "border-angel-950 bg-angel-950 text-gold-300"
+                        : "border-ink/15 text-ink hover:border-gold-500"
                     }`}
                   >
                     {s}

@@ -63,16 +63,25 @@ export function Navbar() {
           <Logo variant="lockup" className="text-cream" />
 
           <ul className="hidden items-center gap-8 lg:flex">
-            {LINKS.map((l) => (
-              <li key={l.href}>
-                <Link
-                  href={l.href}
-                  className="text-[11px] font-medium uppercase tracking-nav text-cream/90 transition hover:text-gold-300"
-                >
-                  {l.label}
-                </Link>
-              </li>
-            ))}
+            {LINKS.map((l) => {
+              const current =
+                l.href === "/"
+                  ? pathname === "/"
+                  : (pathname ?? "").startsWith(l.href);
+              return (
+                <li key={l.href}>
+                  <Link
+                    href={l.href}
+                    aria-current={current ? "page" : undefined}
+                    className={`relative text-[11px] font-medium uppercase tracking-nav transition hover:text-gold-300 after:absolute after:-bottom-2 after:left-0 after:h-px after:w-full after:bg-gold-500 after:transition after:duration-300 ${
+                      current ? "text-gold-300 after:scale-x-100" : "text-cream/80 after:scale-x-0 hover:after:scale-x-100"
+                    }`}
+                  >
+                    {l.label}
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           <div className="flex items-center gap-1 text-gold-300">

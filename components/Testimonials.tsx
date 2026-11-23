@@ -36,7 +36,7 @@ export function Testimonials() {
             onClick={() => setI((v) => v + TESTIMONIALS.length - 1)}
             className="border border-gold-500 px-4 py-2 text-xs uppercase tracking-nav text-gold-500"
           >
-            Prev
+            Anterior
           </button>
           <button
             type="button"
@@ -44,16 +44,8 @@ export function Testimonials() {
             onClick={() => setI((v) => v + 1)}
             className="border border-gold-500 px-4 py-2 text-xs uppercase tracking-nav text-gold-500"
           >
-            Next
+            Siguiente
           </button>
-        </div>
-
-        <div className="mt-16 flex flex-wrap items-center justify-center gap-x-12 gap-y-6 text-sm tracking-[0.2em] text-ink/40">
-          {["VOGUE", "EL TIEMPO", "DINERS", "SEMANA"].map((n) => (
-            <span key={n} className="font-serif text-xl opacity-60 transition hover:opacity-100">
-              {n}
-            </span>
-          ))}
         </div>
       </div>
     </section>

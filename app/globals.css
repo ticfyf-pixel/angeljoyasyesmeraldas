@@ -132,6 +132,39 @@ select {
   font-family: inherit;
 }
 
+.maison-radio {
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  margin: 0;
+  border: 1px solid #c9a66b;
+  border-radius: 999px;
+  background: transparent;
+  display: grid;
+  place-content: center;
+}
+
+.maison-radio:checked {
+  border-color: #0b3d2e;
+}
+
+.maison-radio:checked::before {
+  content: "";
+  width: 7px;
+  height: 7px;
+  border-radius: 999px;
+  background: #0b3d2e;
+}
+
+@media (pointer: coarse) {
+  .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }

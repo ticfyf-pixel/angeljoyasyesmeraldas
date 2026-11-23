@@ -4,7 +4,7 @@ import { WingsHeart } from "./Logo";
 
 export function Footer() {
   return (
-    <footer className="texture-dark bg-ink text-cream">
+    <footer className="relative z-[1] texture-dark bg-angel-950 text-cream">
       <div className="gold-line" />
       <div className="mx-auto grid max-w-site gap-12 px-5 py-16 md:grid-cols-2 md:px-10 lg:grid-cols-5 lg:px-20">
         <div className="lg:col-span-2">
@@ -27,7 +27,7 @@ export function Footer() {
 
         <div>
           <h3 className="text-[11px] uppercase tracking-nav text-gold-500">Colección</h3>
-          <ul className="mt-4 space-y-2 text-sm text-cream/80">
+          <ul className="mt-4 space-y-2 text-sm text-cream/75 [&_a]:transition [&_a]:hover:text-gold-300">
             <li><Link href="/coleccion/anillos">Anillos</Link></li>
             <li><Link href="/coleccion/aretes">Aretes</Link></li>
             <li><Link href="/coleccion/collares">Collares</Link></li>
@@ -36,7 +36,7 @@ export function Footer() {
         </div>
         <div>
           <h3 className="text-[11px] uppercase tracking-nav text-gold-500">Nosotros</h3>
-          <ul className="mt-4 space-y-2 text-sm text-cream/80">
+          <ul className="mt-4 space-y-2 text-sm text-cream/75 [&_a]:transition [&_a]:hover:text-gold-300">
             <li><Link href="/nuestra-historia">Historia</Link></li>
             <li><Link href="/esmeraldas">Esmeraldas</Link></li>
             <li><Link href="/certificado/ANG-EM-001">Certificado de autenticidad</Link></li>
@@ -45,7 +45,7 @@ export function Footer() {
         </div>
         <div>
           <h3 className="text-[11px] uppercase tracking-nav text-gold-500">Ayuda</h3>
-          <ul className="mt-4 space-y-2 text-sm text-cream/80">
+          <ul className="mt-4 space-y-2 text-sm text-cream/75 [&_a]:transition [&_a]:hover:text-gold-300">
             <li><Link href="/contacto">Contacto</Link></li>
             <li><Link href="/legal/devoluciones">Envíos y devoluciones</Link></li>
             <li><Link href="/legal/terminos">Términos</Link></li>

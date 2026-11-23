@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect } from "react";
 import { Logo } from "./Logo";
 
@@ -19,6 +20,7 @@ export function MobileMenu({
   open: boolean;
   onClose: () => void;
 }) {
+  const pathname = usePathname();
   useEffect(() => {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
@@ -44,17 +46,23 @@ export function MobileMenu({
     >
       <div className="flex h-full flex-col items-center justify-center gap-8 px-6 text-center">
         <Logo variant="full" />
-        {LINKS.map((l, i) => (
-          <Link
-            key={l.href}
-            href={l.href}
-            onClick={onClose}
-            className="font-serif text-3xl tracking-[0.18em] text-cream transition hover:text-gold-300"
-            style={{ transitionDelay: open ? `${i * 40}ms` : "0ms" }}
-          >
-            {l.label}
-          </Link>
-        ))}
+        {LINKS.map((l, i) => {
+          const current = l.href === "/" ? pathname === "/" : (pathname ?? "").startsWith(l.href);
+          return (
+            <Link
+              key={l.href}
+              href={l.href}
+              onClick={onClose}
+              aria-current={current ? "page" : undefined}
+              className={`font-serif text-3xl tracking-[0.18em] transition hover:text-gold-300 ${
+                current ? "text-gold-300" : "text-cream"
+              }`}
+              style={{ transitionDelay: open ? `${i * 40}ms` : "0ms" }}
+            >
+              {l.label}
+            </Link>
+          );
+        })}
         <button
           type="button"
           onClick={onClose}

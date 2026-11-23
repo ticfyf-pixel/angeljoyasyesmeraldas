@@ -4,11 +4,11 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
 
 const base =
-  "inline-flex items-center justify-center rounded-[2px] px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] transition duration-300 disabled:cursor-not-allowed disabled:opacity-50";
+  "btn inline-flex items-center justify-center rounded-[2px] px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] transition duration-300 disabled:cursor-not-allowed disabled:opacity-50";
 
 const variants = {
   primary:
-    "bg-gold-500 text-ink shadow-none hover:-translate-y-0.5 hover:bg-gold-300 hover:shadow-gold",
+    "border border-gold-500 bg-angel-950 text-gold-300 hover:bg-gold-500 hover:text-ink",
   secondary:
     "border border-gold-500 bg-transparent text-gold-500 hover:bg-gold-500/10",
   dark: "bg-ink text-cream hover:bg-angel-950",
