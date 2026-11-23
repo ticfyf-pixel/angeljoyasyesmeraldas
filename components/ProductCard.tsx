@@ -23,35 +23,30 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group">
       <Link href={`/producto/${product.slug}`} className="block">
-        <div className="relative aspect-[4/5] overflow-hidden bg-angel-900">
+        <div className="relative aspect-[4/5] overflow-hidden bg-[#120e0c]">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
             src={product.images[0]}
             alt={`${product.name} en ${product.material}${product.emerald ? " con esmeralda colombiana" : ""}`}
-            className="h-full w-full object-cover transition duration-700 ease-out group-hover:scale-[1.03]"
+            className="h-full w-full object-contain p-5 transition duration-700 ease-out group-hover:scale-[1.02]"
             loading="lazy"
           />
-          {product.new && (
-            <span className="absolute left-3 top-3 border border-gold-500/50 bg-angel-950/75 px-2 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-gold-300">
-              Nuevo
-            </span>
-          )}
+          <span className="pointer-events-none absolute inset-3 border border-gold-500/25" />
         </div>
       </Link>
       <div className="mt-5">
         <Link href={`/producto/${product.slug}`}>
-          <h3 className="font-serif text-[1.65rem] leading-none text-ink">{product.name}</h3>
-          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/55">
+          <h3 className="font-serif text-[1.7rem] leading-none tracking-wide text-ink">{product.name}</h3>
+          <p className="mt-2 font-mono text-[10px] uppercase tracking-[0.18em] text-ink/50">
             {product.material}
             {product.emerald ? " · Esmeralda" : ""}
           </p>
-          <p className="mt-2 text-[12px] text-ink/60">Se aparta hoy por WhatsApp</p>
         </Link>
       </div>
       <button
         type="button"
         onClick={comprar}
-        className="btn mt-5 flex min-h-11 w-full items-center justify-center gap-2 border border-angel-900 bg-angel-950 px-4 text-[10px] font-medium uppercase tracking-[0.16em] text-gold-300 transition hover:bg-gold-500 hover:text-ink"
+        className="btn mt-5 flex min-h-11 w-full items-center justify-center gap-2 border border-gold-500/50 bg-transparent px-4 text-[10px] font-medium uppercase tracking-[0.18em] text-angel-900 transition hover:border-angel-950 hover:bg-angel-950 hover:text-gold-300"
       >
         <WhatsAppIcon />
         Lo quiero por WhatsApp

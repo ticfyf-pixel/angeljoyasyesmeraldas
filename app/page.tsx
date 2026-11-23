@@ -22,12 +22,12 @@ export default function HomePage() {
         <div className="mx-auto max-w-site px-5 py-24 md:px-10 lg:px-20">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
             <div>
-              <p className="text-[11px] uppercase tracking-[0.28em] text-angel-700">Empieza por aquí</p>
+              <p className="text-[11px] uppercase tracking-[0.28em] text-angel-700">Selección</p>
               <h2 className="mt-3 font-serif text-4xl tracking-wide2 md:text-5xl">
-                Elige la tuya
+                Piezas de la casa
               </h2>
               <p className="mt-4 max-w-md text-sm leading-6 text-ink/70">
-                Estas son las piezas con las que más nos escriben. El valor se confirma por WhatsApp.
+                Cuatro para empezar. El resto de la colección espera, cada una con certificado.
               </p>
             </div>
             <Button href="/coleccion" variant="dark">

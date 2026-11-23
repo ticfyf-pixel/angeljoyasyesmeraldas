@@ -29,7 +29,7 @@ export function Moments() {
     <section className="bg-angel-950 text-cream">
       <div className="mx-auto max-w-site px-5 py-20 md:px-10 lg:px-20">
         <p className="font-mono text-[11px] uppercase tracking-[0.28em] text-gold-300">Para qué momento</p>
-        <h2 className="mt-3 max-w-[16ch] font-serif text-4xl md:text-5xl">La joya correcta, sin dar vueltas</h2>
+        <h2 className="mt-3 max-w-[16ch] font-serif text-4xl md:text-5xl">Elija según la ocasión</h2>
         <ul className="mt-12 grid gap-10 md:grid-cols-3">
           {MOMENTS.map((item) => (
             <li key={item.title} className="border-t border-gold-500/30 pt-6">

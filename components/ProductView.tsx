@@ -73,7 +73,7 @@ export function ProductView({ product }: { product: Product }) {
             </div>
             <button
               type="button"
-              className="relative aspect-[4/5] flex-1 overflow-hidden rounded-[4px] bg-angel-900"
+              className="relative aspect-[4/5] flex-1 overflow-hidden bg-[#120e0c]"
               onClick={() => setZoom(true)}
               onMouseMove={(e) => {
                 const r = e.currentTarget.getBoundingClientRect();
@@ -87,7 +87,7 @@ export function ProductView({ product }: { product: Product }) {
               <img
                 src={product.images[active]}
                 alt={`${product.name} en ${product.material}${product.emerald ? ", esmeralda colombiana certificada" : ""}`}
-                className="h-full w-full object-cover transition duration-300 hover:scale-150"
+                className="h-full w-full object-contain p-6 md:p-10"
                 style={{ transformOrigin: origin }}
               />
             </button>
@@ -140,10 +140,10 @@ export function ProductView({ product }: { product: Product }) {
               </div>
             </fieldset>
 
-            <div className="mt-8 border border-gold-500/30 bg-white/60 p-5">
-              <p className="font-serif text-2xl">Déjala apartada hoy</p>
+            <div className="mt-8 border-t border-gold-500/40 pt-6">
+              <p className="font-serif text-2xl">Apartar esta pieza</p>
               <p className="mt-2 max-w-md text-sm leading-6 text-ink/70">
-                El valor, la talla y el envío se cierran por WhatsApp. Sale con certificado y empaque firmado.
+                El valor, la talla y el envío se confirman por WhatsApp. Sale con certificado y empaque firmado.
               </p>
               {aviso && (
                 <p className="mt-4 text-sm leading-6 text-ink/75">
