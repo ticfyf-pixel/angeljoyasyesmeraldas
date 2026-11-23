@@ -10,8 +10,8 @@ export function Loader() {
 
   function enter() {
     setLeaving(true);
-    sessionStorage.setItem("angel-loader-v4", "1");
-    window.setTimeout(() => setShow(false), 700);
+    sessionStorage.setItem("angel-loader-v5", "1");
+    window.setTimeout(() => setShow(false), 280);
   }
 
   useEffect(() => {
@@ -19,11 +19,11 @@ export function Loader() {
       setShow(false);
       return;
     }
-    if (sessionStorage.getItem("angel-loader-v4")) {
+    if (sessionStorage.getItem("angel-loader-v5")) {
       setShow(false);
       return;
     }
-    const t = window.setTimeout(enter, 6800);
+    const t = window.setTimeout(enter, 1400);
     return () => window.clearTimeout(t);
   }, []);
 
@@ -44,7 +44,7 @@ export function Loader() {
 
   return (
     <div
-      className={`fixed inset-0 z-[90] flex items-center justify-center bg-angel-950 transition-opacity duration-700 ${
+      className={`fixed inset-0 z-[90] flex items-center justify-center bg-angel-950 transition-opacity duration-300 ${
         leaving ? "pointer-events-none opacity-0" : "opacity-100"
       }`}
     >
@@ -70,7 +70,6 @@ export function Loader() {
           </span>
         </button>
         <span className="seal-rule" aria-hidden="true" />
-        <p className="mt-7 text-[10px] uppercase tracking-[0.46em] text-cream/75">Entrar</p>
       </div>
       <style>{`
         @keyframes seal-float {
