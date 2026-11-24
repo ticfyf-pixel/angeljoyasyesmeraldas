@@ -4,7 +4,7 @@ import Link from "next/link";
 import type { ButtonHTMLAttributes, MouseEventHandler, ReactNode } from "react";
 
 const base =
-  "btn inline-flex items-center justify-center rounded-[2px] px-8 py-3.5 text-[11px] font-medium uppercase tracking-[0.14em] transition duration-300 disabled:cursor-not-allowed disabled:opacity-50";
+  "btn inline-flex items-center justify-center rounded-[2px] px-8 py-3.5 text-[13px] font-medium uppercase tracking-[0.12em] transition duration-300 disabled:cursor-not-allowed disabled:opacity-50";
 
 const variants = {
   primary:

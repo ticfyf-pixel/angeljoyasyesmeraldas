@@ -10,13 +10,13 @@ export function Footer() {
         <div className="lg:col-span-2">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/logo.jpg"
-            alt="Ángel Joyas & Esmeraldas"
-            className="h-28 w-28 rounded-sm object-cover"
+            src="/images/marca-a.png"
+            alt=""
+            className="h-20 w-20 object-contain"
             loading="lazy"
           />
           <p className="mt-5 font-serif text-2xl tracking-[0.2em]">ÁNGEL</p>
-          <p className="mt-1 text-[11px] uppercase tracking-[0.18em] text-gold-500">
+          <p className="mt-1 text-[13px] uppercase tracking-[0.16em] text-gold-500">
             Joyas & Esmeraldas
           </p>
           <p className="mt-4 max-w-sm font-serif text-lg italic text-gold-300">

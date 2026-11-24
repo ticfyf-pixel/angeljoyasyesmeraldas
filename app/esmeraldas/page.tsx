@@ -20,7 +20,7 @@ const STEPS = [
   {
     n: "03",
     title: "Certificación",
-    text: "Toda esmeralda de Ángel viaja con certificado de autenticidad. Materiales, peso y código de pieza quedan registrados para ti y para quien herede la joya.",
+    text: "Toda esmeralda de Ángel viaja con certificado de autenticidad. Materiales, peso y código de pieza quedan registrados para usted y para quien herede la joya.",
   },
 ];
 

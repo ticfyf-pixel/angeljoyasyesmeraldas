@@ -16,7 +16,7 @@ export default function ClubPage() {
           CLUB ÁNGEL
         </h1>
         <p className="mx-auto mt-6 max-w-xl text-sm leading-7 text-gold-300">
-          Un espacio para quienes coleccionan con calma. Acceso anticipado a ediciones, citas de asesoría y un obsequio de bienvenida cuando tu primera pieza llega a casa.
+          Un espacio para quienes coleccionan con calma. Acceso anticipado a ediciones, citas de asesoría y un obsequio de bienvenida cuando su primera pieza llega a casa.
         </p>
         <div className="mt-10 flex justify-center">
           <Button href="/coleccion" variant="secondary">

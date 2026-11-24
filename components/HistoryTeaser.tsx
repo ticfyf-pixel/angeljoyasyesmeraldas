@@ -19,7 +19,7 @@ export function HistoryTeaser() {
           <h2 className="mt-3 font-serif text-4xl tracking-wide2 md:text-5xl">Nuestra historia</h2>
           <div className="gold-line mt-6 w-16" />
           <p className="mt-8 max-w-lg text-base leading-7 text-ink/80">
-            Ángel Joyas & Esmeraldas nace de la creencia de que el verdadero lujo está en el detalle, la emoción y la autenticidad. Cada pieza es diseñada y elaborada a mano para celebrar tu individualidad, tu fortaleza y una belleza que trasciende el tiempo.
+            Ángel Joyas & Esmeraldas nace de la creencia de que el verdadero lujo está en el detalle, la emoción y la autenticidad. Cada pieza es diseñada y elaborada a mano para celebrar su individualidad, su fortaleza y una belleza que trasciende el tiempo.
           </p>
           <p className="mt-4 max-w-lg text-base leading-7 text-ink/80">
             Desde Medellín, trabajamos el oro y la esmeralda colombiana con oficio de taller: silencio, precisión y un brillo que no se improvisa.

@@ -52,8 +52,8 @@ export function Moments() {
 }
 
 const STEPS = [
-  { n: "01", title: "Elige la pieza", text: "Mira la colección y quédate con la que te representa." },
-  { n: "02", title: "Escríbenos", text: "Por WhatsApp confirmamos talla, empaque y envío." },
+  { n: "01", title: "Elija la pieza", text: "Mire la colección y quédese con la que le representa." },
+  { n: "02", title: "Escríbanos", text: "Por WhatsApp confirmamos talla, empaque y envío." },
   { n: "03", title: "La apartamos", text: "El pago se cierra en el chat y sale con certificado." },
 ];
 

@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useCart } from "@/context/CartContext";
 import type { Product } from "@/data/products";
 import { getRelated } from "@/data/products";
@@ -16,6 +16,9 @@ export function ProductView({ product }: { product: Product }) {
   const [zoom, setZoom] = useState(false);
   const [aviso, setAviso] = useState(false);
   const [origin, setOrigin] = useState("50% 50%");
+  const [loupe, setLoupe] = useState(false);
+  const [pinch, setPinch] = useState(1);
+  const pinchRef = useRef<{ d: number; s: number } | null>(null);
   const related = useMemo(() => getRelated(product), [product]);
 
   useEffect(() => {
@@ -74,7 +77,12 @@ export function ProductView({ product }: { product: Product }) {
             <button
               type="button"
               className="relative aspect-[4/5] flex-1 overflow-hidden bg-[#120e0c]"
-              onClick={() => setZoom(true)}
+              onClick={() => {
+                setPinch(1);
+                setZoom(true);
+              }}
+              onMouseEnter={() => setLoupe(true)}
+              onMouseLeave={() => setLoupe(false)}
               onMouseMove={(e) => {
                 const r = e.currentTarget.getBoundingClientRect();
                 const x = ((e.clientX - r.left) / r.width) * 100;
@@ -87,7 +95,7 @@ export function ProductView({ product }: { product: Product }) {
               <img
                 src={product.images[active]}
                 alt={`${product.name} en ${product.material}${product.emerald ? ", esmeralda colombiana certificada" : ""}`}
-                className="h-full w-full object-contain p-6 md:p-10"
+                className={`h-full w-full object-contain p-6 transition duration-300 ease-out md:p-10 ${loupe ? "md:scale-[1.65]" : ""}`}
                 style={{ transformOrigin: origin }}
               />
               <span className="pointer-events-none absolute inset-4 border border-gold-500/25 md:inset-6" />
@@ -106,12 +114,12 @@ export function ProductView({ product }: { product: Product }) {
           </div>
 
           <div>
-            <p className="text-[11px] uppercase tracking-[0.22em] text-angel-700">
+            <p className="text-[13px] uppercase tracking-[0.14em] text-angel-700">
               {product.material}
               {product.carats ? ` · ${product.carats}` : ""}
             </p>
             <h1 className="mt-3 font-serif text-4xl md:text-6xl">{product.name}</h1>
-            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 font-mono text-[10px] uppercase tracking-[0.16em] text-ink/50">
+            <ul className="mt-5 flex flex-wrap gap-x-4 gap-y-2 text-[13px] uppercase tracking-[0.12em] text-ink/55">
               <li>Certificado</li>
               <li className="text-gold-500">·</li>
               <li>Hecho en Medellín</li>
@@ -122,7 +130,7 @@ export function ProductView({ product }: { product: Product }) {
             <p className="mt-4 max-w-md text-sm leading-7 text-ink/75">{product.story}</p>
 
             <fieldset className="mt-8">
-              <legend className="text-[10px] uppercase tracking-nav">Talla / medida</legend>
+              <legend className="text-[13px] uppercase tracking-[0.12em]">Talla / medida</legend>
               <div className="mt-3 flex flex-wrap gap-2">
                 {product.sizes.map((s) => (
                   <button
@@ -148,12 +156,12 @@ export function ProductView({ product }: { product: Product }) {
               </p>
               {aviso && (
                 <p className="mt-4 text-sm leading-6 text-ink/75">
-                  Listo. El mensaje ya está en WhatsApp. Solo tienes que enviarlo. Si no se abrió, toca el botón otra vez.
+                  Listo. El mensaje ya está en WhatsApp. Solo tiene que enviarlo. Si no se abrió, toque el botón otra vez.
                 </p>
               )}
               <div className="mt-5">
                 <Button type="button" onClick={comprar} className="w-full sm:w-auto">
-                  Lo quiero por WhatsApp
+                  Apartar esta pieza
                 </Button>
               </div>
               <button
@@ -161,7 +169,7 @@ export function ProductView({ product }: { product: Product }) {
                 onClick={llevar}
                 className="mt-4 block text-[13px] text-gold-500 underline underline-offset-4"
               >
-                Quiero llevarla con otras piezas
+                Armar mi juego
               </button>
               {enCarrito > 0 && (
                 <p className="mt-3 text-sm text-ink/70">En el carrito: {enCarrito}. Desde ahí puedes pedir todo por WhatsApp.</p>
@@ -173,7 +181,7 @@ export function ProductView({ product }: { product: Product }) {
 
             <Link
               href={`/certificado/${product.certificateId}`}
-              className="mt-6 inline-block text-[11px] uppercase tracking-nav text-gold-500"
+              className="mt-6 inline-block text-[13px] tracking-normal text-gold-500"
             >
               Descargar certificado de autenticidad
             </Link>
@@ -182,7 +190,7 @@ export function ProductView({ product }: { product: Product }) {
 
         {related.length > 0 && (
           <section className="mt-24">
-            <h2 className="font-serif text-3xl">También te puede interesar</h2>
+            <h2 className="font-serif text-3xl">También le puede interesar</h2>
             <div className="mt-8 grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
               {related.map((p) => (
                 <ProductCard key={p.id} product={p} />
@@ -196,9 +204,9 @@ export function ProductView({ product }: { product: Product }) {
         <button
           type="button"
           onClick={comprar}
-          className="flex min-h-12 w-full items-center justify-center bg-angel-950 text-[11px] uppercase tracking-[0.16em] text-gold-300"
+          className="flex min-h-12 w-full items-center justify-center border border-gold-500 bg-angel-950 font-serif text-[15px] tracking-wide text-gold-300"
         >
-          Lo quiero por WhatsApp
+          Apartar esta pieza
         </button>
       </div>
 
@@ -221,7 +229,24 @@ export function ProductView({ product }: { product: Product }) {
             src={product.images[active]}
             alt={`${product.name} ampliada`}
             className="max-h-[90vh] max-w-full object-contain"
+            style={{ transform: `scale(${pinch})` }}
             loading="lazy"
+            onTouchStart={(e) => {
+              if (e.touches.length < 2) return;
+              const dx = e.touches[0].clientX - e.touches[1].clientX;
+              const dy = e.touches[0].clientY - e.touches[1].clientY;
+              pinchRef.current = { d: Math.hypot(dx, dy), s: pinch };
+            }}
+            onTouchMove={(e) => {
+              if (e.touches.length < 2 || !pinchRef.current) return;
+              const dx = e.touches[0].clientX - e.touches[1].clientX;
+              const dy = e.touches[0].clientY - e.touches[1].clientY;
+              const next = pinchRef.current.s * (Math.hypot(dx, dy) / pinchRef.current.d);
+              setPinch(Math.min(4, Math.max(1, next)));
+            }}
+            onTouchEnd={() => {
+              pinchRef.current = null;
+            }}
           />
         </div>
       )}

@@ -28,7 +28,7 @@ export function Hero() {
           Angelicales.
         </h1>
         <p className="mt-8 max-w-md text-base leading-7 text-cream/80">
-          Elige tu joya en oro y esmeralda. Te confirmamos talla y envío por WhatsApp, y la dejamos apartada.
+          Elija su joya en oro y esmeralda. Le confirmamos talla y envío por WhatsApp, y la dejamos apartada.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
           <Button href="/coleccion">Ver las piezas</Button>

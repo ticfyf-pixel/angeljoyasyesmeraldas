@@ -8,6 +8,7 @@ import { Testimonials } from "@/components/Testimonials";
 import { Newsletter } from "@/components/Newsletter";
 import { Button } from "@/components/Button";
 import { HowToBuy, Moments } from "@/components/Sales";
+import { Reveal } from "@/components/Reveal";
 import { getFeatured } from "@/data/products";
 
 export default function HomePage() {
@@ -18,6 +19,7 @@ export default function HomePage() {
       <Hero />
       <ValueBar />
       <Moments />
+      <Reveal>
       <section className="bg-cream text-ink">
         <div className="mx-auto max-w-site px-5 py-24 md:px-10 lg:px-20">
           <div className="flex flex-col items-start justify-between gap-6 md:flex-row md:items-end">
@@ -41,11 +43,12 @@ export default function HomePage() {
           </div>
         </div>
       </section>
-      <HowToBuy />
-      <HistoryTeaser />
-      <StatsBar />
-      <Guarantees />
-      <Testimonials />
+      </Reveal>
+      <Reveal><HowToBuy /></Reveal>
+      <Reveal><HistoryTeaser /></Reveal>
+      <Reveal><StatsBar /></Reveal>
+      <Reveal><Guarantees /></Reveal>
+      <Reveal><Testimonials /></Reveal>
       <Newsletter />
     </>
   );

@@ -40,7 +40,7 @@ export default function ContactoPage() {
               />
             </div>
             {ok ? (
-              <p className="font-serif text-2xl">Recibimos tu mensaje. Te escribiremos muy pronto.</p>
+              <p className="font-serif text-2xl">Recibimos su mensaje. Le escribiremos muy pronto.</p>
             ) : (
               <Button type="submit">Enviar</Button>
             )}

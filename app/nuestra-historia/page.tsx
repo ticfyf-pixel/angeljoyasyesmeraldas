@@ -38,7 +38,7 @@ export default function HistoriaPage() {
           Lujo con alma, brillo con propósito
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-7 text-ink/75">
-          Ángel Joyas & Esmeraldas nace de la creencia de que el verdadero lujo está en el detalle, la emoción y la autenticidad. Cada pieza es diseñada y elaborada a mano para celebrar tu individualidad, tu fortaleza y una belleza que trasciende el tiempo.
+          Ángel Joyas & Esmeraldas nace de la creencia de que el verdadero lujo está en el detalle, la emoción y la autenticidad. Cada pieza es diseñada y elaborada a mano para celebrar su individualidad, su fortaleza y una belleza que trasciende el tiempo.
         </p>
 
         <div className="mt-16 grid gap-10 lg:grid-cols-2">

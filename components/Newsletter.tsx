@@ -37,7 +37,7 @@ export function Newsletter() {
         </p>
         {ok ? (
           <p className="mt-10 font-serif text-2xl text-gold-300">
-            Bienvenida al círculo. Revisa tu correo para confirmar (doble opt-in).
+            Bienvenida al círculo. Revise su correo para confirmar (doble opt-in).
           </p>
         ) : (
           <form onSubmit={onSubmit} className="mt-10 text-left">

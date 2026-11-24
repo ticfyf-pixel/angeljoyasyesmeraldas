@@ -56,12 +56,12 @@ export function Logo({
   const content = (
     <span className={`inline-flex items-center gap-3 ${className}`}>
       {variant !== "word" && (
-        <span className="relative h-12 w-12 overflow-hidden rounded-sm md:h-14 md:w-14">
+        <span className="relative h-12 w-12 md:h-14 md:w-14">
           {/* eslint-disable-next-line @next/next/no-img-element */}
           <img
-            src="/images/logo.jpg"
+            src="/images/marca-a.png"
             alt=""
-            className="h-full w-full scale-150 object-cover object-[center_38%]"
+            className="h-full w-full object-contain"
           />
         </span>
       )}
@@ -71,7 +71,7 @@ export function Logo({
             ÁNGEL
           </span>
           {(variant === "full" || variant === "lockup") && (
-            <span className="mt-0.5 text-[9px] uppercase tracking-[0.22em] text-gold-500/80">
+            <span className="mt-0.5 text-[12px] uppercase tracking-[0.16em] text-gold-500/80">
               Joyas & Esmeraldas
             </span>
           )}

@@ -14,7 +14,7 @@ export default function CarritoPage() {
         <h1 className="font-serif text-4xl tracking-wide2 md:text-5xl">Carrito</h1>
         {items.length === 0 ? (
           <div className="mt-12">
-            <p className="text-sm text-ink/70">Aún no hay piezas en tu bandeja.</p>
+            <p className="text-sm text-ink/70">Aún no hay piezas en su bandeja.</p>
             <div className="mt-6">
               <Button href="/coleccion">Explorar colección</Button>
             </div>

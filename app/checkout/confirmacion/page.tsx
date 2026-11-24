@@ -22,7 +22,7 @@ function ConfirmInner() {
           <strong className="text-angel-900">{orden}</strong>.
         </p>
         <p className="mt-6 text-sm text-ink/70">
-          Recibirás un correo de confirmación con identidad de marca. El certificado de autenticidad queda adjunto a tu pieza.
+          Recibirás un correo de confirmación con identidad de marca. El certificado de autenticidad queda adjunto a su pieza.
         </p>
         <div className="mt-10 flex flex-wrap justify-center gap-3">
           <Button href={`/certificado/${product.certificateId}`}>Ver certificado</Button>
