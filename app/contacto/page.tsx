@@ -19,7 +19,7 @@ export default function ContactoPage() {
         <p className="text-[11px] uppercase tracking-[0.28em] text-angel-700">Showroom</p>
         <h1 className="mt-3 font-serif text-4xl tracking-wide2 md:text-5xl">Contacto</h1>
         <p className="mt-4 max-w-xl text-sm leading-7 text-ink/70">
-          Escríbenos, agenda una asesoría o visítanos en El Poblado. El taller responde con la misma calma con la que trabaja el oro.
+          Escríbanos, agende una asesoría o visítenos en El Poblado. El taller responde con la misma calma con la que trabaja el oro.
         </p>
 
         <div className="mt-14 grid gap-12 lg:grid-cols-2">

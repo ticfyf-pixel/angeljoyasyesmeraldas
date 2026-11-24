@@ -175,7 +175,7 @@ export function ProductView({ product }: { product: Product }) {
                 <p className="mt-3 text-sm text-ink/70">En el carrito: {enCarrito}. Desde ahí puedes pedir todo por WhatsApp.</p>
               )}
               <p className="mt-4 text-sm leading-6 text-ink/65">
-                ¿Es un regalo? Escríbelo en el chat y la empacamos para entregar.
+                ¿Es un regalo? Escríbalo en el chat y lo empacamos para entregar.
               </p>
             </div>
 

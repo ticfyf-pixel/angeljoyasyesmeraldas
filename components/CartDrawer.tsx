@@ -53,7 +53,7 @@ export function CartDrawer() {
         <div className="flex-1 overflow-y-auto px-6 py-6">
           {items.length === 0 ? (
             <p className="text-sm leading-7 text-ink/70">
-              Tu bandeja está en silencio. Explora la colección y elige una pieza con alma.
+              Su bandeja está en silencio. Explore la colección y elija una pieza con alma.
             </p>
           ) : (
             <ul className="space-y-6">
